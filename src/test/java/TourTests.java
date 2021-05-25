@@ -5,17 +5,21 @@ public class TourTests extends BaseUI {
     String currentUrlTour;
 
     @Test
-    public void testTourPage() {
-        driver.findElement(Locators.LINK_TOUR).click();
+    public void testLinkTour() {
+
+        tourPage.clickLinkTourPage();
         currentUrlTour = driver.getCurrentUrl();
         System.out.println(currentUrlTour);
         Assert.assertEquals(currentUrlTour, Data.expectedUrlTour);
     }
 
     @Test  // Homework: SendKeys
-    public void testSearchTourPage() {
-        driver.findElement(Locators.LINK_TOUR).click();
-        driver.findElement(Locators.TOUR_SEARCH_FIELD).sendKeys(Data.tourSearchField);
-        driver.findElement(Locators.BUTTON_SEARCH_TOUR).click();
+    public void testSearchTour() {
+
+        tourPage.clickLinkTourPage();
+        tourPage.clickLinkTourSearchField();
+        tourPage.clickButtonTourSearch();
+
     }
+
 }

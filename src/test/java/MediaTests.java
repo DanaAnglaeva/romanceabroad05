@@ -6,11 +6,12 @@ public class MediaTests extends BaseUI {
     String currentUrlMedia;
 
     @Test
-    public void testMediaPage() {
-        driver.findElement(Locators.LINK_MEDIA).click();
+    public void testLinkMedia() {
+        mediaPage.clickLinkMedia();
+
         currentUrlMedia = driver.getCurrentUrl();
         System.out.println(currentUrlMedia);
-        Assert.assertEquals(currentUrlMedia,Data.expectedUrlMedia);
+        Assert.assertEquals(currentUrlMedia, Data.expectedUrlMedia);
 
         //add test case and boolean
     }
