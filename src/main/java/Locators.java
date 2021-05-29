@@ -26,6 +26,7 @@ public class Locators {
     public static final By HOME_PAGE_JOIN_TODAY = By.xpath("//a[text()='JOIN TODAY!']");
     public static final By HOME_PAGE_SUPPORT_BY_EMAIL = By.xpath("//a[@href='mailto:support@romanceabroad.com']");
     public static final By HOME_PAGE_IMAGE_1 = By.xpath("//img[@src='/img/portfolio/slideimg9.jpg']");
+    public static final By HOME_PAGE_MAIN_LINK = By.xpath("//ul[@class='navbar-nav']");
 
     //HowWeWork Tests
     public static final By LINK_HOW_WE_WORK = By.xpath("//a[@href = 'https://romanceabroad.com/content/view/how-it-works']");
@@ -52,22 +53,41 @@ public class Locators {
 
     //Blog Tests
     public static final By LINK_BLOG = By.xpath("//a[@href='https://romanceabroad.com/content/view/blog']");
-    public static final By BLOG_MENU = By.xpath("//div[@class='inside account_menu']");
+    public static final By BLOG_MENU  = By.xpath("//div[@class='info-content-block wysiwyg']");
+    public static final By BLOG_ALL_MENU  = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']");
 
     //SignIn Tests
     public static final By LINK_SIGN_IN = By.xpath("//a[@href='https://romanceabroad.com/users/login_form']");
+    public static final By SIGN_IN_EMAIL_FIELD = By.xpath("//div[@class='col-xs-8'] //input[contains(@name,'email')]");
+    public static final By SIGN_IN_PASSWORD_FIELD = By.xpath("//div[@class='col-xs-8'] //input[contains(@name,'password')]");
+    public static final By SIGN_IN_BUTTON = By.xpath("//button[@type='submit']");
+    public static final By LINK_REGISTER = By.xpath("//i[@class='fa fa-arrow-right']");
+    public static final By SIGN_IN_WITH_FACEBOOK = By.xpath("//a[@href='https://romanceabroad.com/users_connections/oauth_login/1']");
+    public static final By LINK_FORGOT_PASSWORD = By.xpath("//a[@href='https://romanceabroad.com/users/restore']");
+    public static final By RESTORE_PASSWORD_EMAIL_FIELD = By.cssSelector("#email");
+    public static final By RESTORE_PASSWORD_BUTTON_SAVE = By.xpath("//input[@type='submit']");
 
     //Header Tests
     public static final By HEADER_DROP_DOWN_MENU = By.cssSelector(".uam-top.link-open-menu.btn-slide");
+    public static final By HEADER_CLOSE_DROP_DOWN_MENU = By.cssSelector(".fa.fa-times.close_left_menu");
     public static final By HEADER_GIFT_SIGN = By.cssSelector(".fa.fa-gift.fa-lg");
     public static final By HEADER_TOUR_TO_UKRAINE = By.xpath("//a[text()='Tour to Ukraine']");
     public static final By HEADER_INDIVIDUAL_TRIP_TO_UKRAINE = By.xpath("//a[text()='Individual trip to Ukraine']");
     public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//img[@src='/application/views/flatty/logo/mini_logo.png']");
     public static final By HEADER_BUTTON_FIND_PEOPLE = By.xpath("//button[@id='main_search_button_user_line']");
-    public static final By HEADER_LOGIN = By.cssSelector("#ajax_login_link");
-
+    public static final By HEADER_BUTTON_LOGIN = By.cssSelector("#ajax_login_link");
 
     //Footer Tests
+    public static final By FOOTER_HELP_CONTACT_US = By.xpath("//a[@href='https://romanceabroad.com/tickets/']");
+//    public static final By FOOTER_HELP_SITEMAP= By.xpath("//a[@id='footer_footer-menu-help-item_footer-menu-map-item']");
+//    public static final By FOOTER_ABOUT_HOW_IT_WORKS= By.xpath("//a[@href='https://romanceabroad.com/content/view/how-it-works']");
+//    public static final By FOOTER_ABOUT_NEWS= By.xpath("//a[@href='https://romanceabroad.com/news/']");
+//    public static final By FOOTER_POLICY_PRIVACY= By.xpath("//a[@href='https://romanceabroad.com/content/view/privacy-and-security']");
+//    public static final By FOOTER_POLICY_TERMS_OF_USE= By.xpath("//a[@href='https://romanceabroad.com/content/view/legal-terms']");
+//    public static final By FOOTER_ONLINE_ADVERTISING_LINK= By.xpath("//a[@href='http://westwebart.ru']");
+
+
+
 
 
 

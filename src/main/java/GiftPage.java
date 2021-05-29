@@ -17,7 +17,5 @@ public class GiftPage extends BaseActions {
 
     public void clickButtonGiftSearch() {
         driver.findElement(Locators.BUTTON_GIFT_SEARCH).click();
-
-
     }
 }

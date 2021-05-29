@@ -45,21 +45,23 @@ public class MainPage extends BaseActions {
 
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
-        boolean selectedCheckbox = checkboxConfirmation.isSelected();
-        System.out.println(selectedCheckbox + "!!!!!");
-        checkboxConfirmation.click();
+        //ask Alex maybe we need spit boolean method with registration test, because need comment before running
+        // running search test CheckBox confirmation
+//        boolean selectedCheckbox = checkboxConfirmation.isSelected();
+//        System.out.println(selectedCheckbox + "!!!!!");
+    }
+         public void clickCheckboxConfirmation() {
+         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
+         checkboxConfirmation.click();
     }
 
     public void clickLinkHomePage() {
         driver.findElement(Locators.LINK_HOME_PAGE).click();
-
     }
-
     public void clickHomePageBookNow() {
         driver.findElement(Locators.HOME_PAGE_BOOK_NOW).click();
 
     }
-
     public void clickHomePageJoinToday() {
         driver.findElement(Locators.HOME_PAGE_JOIN_TODAY).click();
     }

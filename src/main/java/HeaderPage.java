@@ -1,5 +1,3 @@
-import okhttp3.internal.http2.Header;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,16 +7,35 @@ public class HeaderPage extends BaseActions {
         super(driver, wait);
     }
 
-    public void clickHeaderDropDownMenu (){
+    public void clickHeaderDropDownMenu() {
         driver.findElement(Locators.HEADER_DROP_DOWN_MENU).click();
-        
-
-
-
-
-
-
+    }
+   public void clickCloseHeaderDropDownMenu() {
+        driver.findElement(Locators.HEADER_CLOSE_DROP_DOWN_MENU).click();
     }
 
+    public void clickHeaderGigtSignIn() {
+        driver.findElement(Locators.HEADER_GIFT_SIGN).click();
+    }
+
+    public void clickHeaderTourToUkrain() {
+        driver.findElement(Locators.HEADER_TOUR_TO_UKRAINE).click();
+    }
+
+    public void clickHeaderIndividualTripToUkraine() {
+        driver.findElement(Locators.HEADER_INDIVIDUAL_TRIP_TO_UKRAINE).click();
+    }
+
+    public void clickHeadrlerLogoHeart() {
+        driver.findElement(Locators.HEADER_ROMANCE_LOGO_HEART).click();
+    }
+
+    public void clickHeaderButtonFindPeople() {
+        driver.findElement(Locators.HEADER_BUTTON_FIND_PEOPLE).click();
+    }
+
+    public void clickHeaderButtonLogin() {
+        driver.findElement(Locators.HEADER_BUTTON_LOGIN).click();
+    }
 
 }

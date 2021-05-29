@@ -1,5 +1,7 @@
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.util.List;
 
 public class MainPageTests extends BaseUI {
 
@@ -10,7 +12,6 @@ public class MainPageTests extends BaseUI {
     @Test
     public void testMainPageLink() {
         mainPage.clickLinkHomePage();
-
         currentUrlHome = driver.getCurrentUrl();
         System.out.println(currentUrlHome);
         Assert.assertEquals(currentUrlHome, Data.expectedUrlHome);
@@ -44,4 +45,18 @@ public class MainPageTests extends BaseUI {
         mainPage.clickButtonIframeYoutube();
     }
 
+    @Test//test have moved to Registration test /  Lesson 9
+    public void test9Loop() {  //for iteration
+
+        List<WebElement> links = driver.findElements(Locators.HOME_PAGE_MAIN_LINK);
+        System.out.println(links.size());
+        for (int i = 0; i < links.size(); i++) {
+            String info = links.get(i).getText();
+            System.out.println(info);
+
+            links.get(i).click();
+            driver.get(mainUrl);
+            links = driver.findElements(Locators.HOME_PAGE_MAIN_LINK);
+        }
+    }
 }

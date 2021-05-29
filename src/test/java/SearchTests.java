@@ -17,7 +17,6 @@ public class SearchTests extends BaseUI {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         searchPage.getDropDownListByDefault();
         System.out.println("List sorted by Default!");
 
@@ -50,27 +49,7 @@ public class SearchTests extends BaseUI {
         System.out.println("Success! Index 3 selected!");
     }
 
-    @Test //homework Lesson 7/DropDown List
-    public void BoundaryTestingFromAge_18_To_80() {
-        searchPage.clickLinkSearch();
-        WebElement dropDownListMinPage = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMinPage, 0);
-        WebElement dropDownListMaxPage = driver.findElement(Locators.DROP_DOWN_LIST_MAX_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMaxPage, 62);
-        System.out.println("List of brides sorted by age from 18 to 80 successfully!");
-    }
-
-    @Test
-    public void BoundaryTestingFromAge_19_TO_79() {
-        searchPage.clickLinkSearch();
-        WebElement dropDownListMinPage = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMinPage, 0);
-        WebElement dropDownListMaxPage = driver.findElement(Locators.DROP_DOWN_LIST_MAX_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMaxPage, 62);
-        System.out.println("List of brides sorted by age from 18 to 80 successfully!");
-    }
-
-    @Test
+       @Test
     public void TestSearchRandomAgeValue() {
         searchPage.clickLinkSearch();
         WebElement dropDownListMinPage = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
@@ -79,7 +58,26 @@ public class SearchTests extends BaseUI {
         searchPage.getDropDownListByIndex(dropDownListMaxPage, 36);
         System.out.println("Success!List of brides sorted by age from 20 to 54!");
         searchPage.clickButtonSearchByAge();
-        driver.findElement(Locators.BUTTON_SEARCH_BY_AGE).click();
+    }
+    @Test //Lesson 9
+
+    public void testAssertionWebElementGetText () {
+        WebElement tabSearch = driver.findElement((Locators.LINK_SEARCH));
+        if (tabSearch.getText().contains("PRETTY WOMEN")) {
+            tabSearch.click();
+        } else {
+            Assert.fail("We can't find Pretty Women Tab");
+        }
+    }
+
+    @Test //Lesson 10 Ask Alex maybe we need move this method to other Test Class?
+    public void testAssertionWebElementIsDisplayed () {
+        WebElement tabSearch = driver.findElement((Locators.LINK_SEARCH));
+        if (tabSearch.isDisplayed()) {
+            tabSearch.click();
+        } else {
+            Assert.fail("We can't find Pretty Women Tab");
+        }
     }
 }
 
