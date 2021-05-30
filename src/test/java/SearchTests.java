@@ -11,7 +11,7 @@ public class SearchTests extends BaseUI {
         searchPage.clickLinkSearch();
         currentUrlSearch = driver.getCurrentUrl();
         System.out.println(currentUrlSearch);
-        Assert.assertEquals(currentUrlSearch, Data.expectedUrlSearch);
+                Assert.assertEquals(currentUrlSearch, Data.expectedUrlSearch);
             try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -52,10 +52,10 @@ public class SearchTests extends BaseUI {
        @Test
     public void TestSearchRandomAgeValue() {
         searchPage.clickLinkSearch();
-        WebElement dropDownListMinPage = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMinPage, 2);
-        WebElement dropDownListMaxPage = driver.findElement(Locators.DROP_DOWN_LIST_MAX_USER_AGE);
-        searchPage.getDropDownListByIndex(dropDownListMaxPage, 36);
+        WebElement dropDownListMinAge = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
+        searchPage.getDropDownListByIndex(dropDownListMinAge, 2);
+        WebElement dropDownListMaxAge = driver.findElement(Locators.DROP_DOWN_LIST_MAX_USER_AGE);
+        searchPage.getDropDownListByIndex(dropDownListMaxAge, 36);
         System.out.println("Success!List of brides sorted by age from 20 to 54!");
         searchPage.clickButtonSearchByAge();
     }

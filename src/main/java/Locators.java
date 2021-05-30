@@ -25,11 +25,12 @@ public class Locators {
     public static final By HOME_PAGE_BOOK_NOW = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
     public static final By HOME_PAGE_JOIN_TODAY = By.xpath("//a[text()='JOIN TODAY!']");
     public static final By HOME_PAGE_SUPPORT_BY_EMAIL = By.xpath("//a[@href='mailto:support@romanceabroad.com']");
-    public static final By HOME_PAGE_IMAGE_1 = By.xpath("//img[@src='/img/portfolio/slideimg9.jpg']");
-    public static final By HOME_PAGE_MAIN_LINK = By.xpath("//ul[@class='navbar-nav']");
+    public static final By TAB_OF_MAIN_PAGE = By.xpath("//ul[@class='navbar-nav']//li");
+
 
     //HowWeWork Tests
     public static final By LINK_HOW_WE_WORK = By.xpath("//a[@href = 'https://romanceabroad.com/content/view/how-it-works']");
+    public static final By TITLE_OF_PAGE = By.xpath("//h1");
 
     //Search Tests
     public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
@@ -50,11 +51,12 @@ public class Locators {
     public static final By LINK_TOUR = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
     public static final By TOUR_SEARCH_FIELD = By.cssSelector("#search_product");
     public static final By BUTTON_SEARCH_TOUR = By.xpath("//button[@id='search_friend']");
+    public static final By LINK_TOUR_RELATED_GALERY = By.xpath("//ul[@class='user-gallery']");
 
     //Blog Tests
     public static final By LINK_BLOG = By.xpath("//a[@href='https://romanceabroad.com/content/view/blog']");
-    public static final By BLOG_MENU  = By.xpath("//div[@class='info-content-block wysiwyg']");
-    public static final By BLOG_ALL_MENU  = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']");
+    public static final By BLOG_ALL_MENU = By.xpath("//div[@class='info-content-block wysiwyg']//ul");
+    public static final By BLOG_TAB_MENU = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']");
 
     //SignIn Tests
     public static final By LINK_SIGN_IN = By.xpath("//a[@href='https://romanceabroad.com/users/login_form']");
@@ -79,6 +81,7 @@ public class Locators {
 
     //Footer Tests
     public static final By FOOTER_HELP_CONTACT_US = By.xpath("//a[@href='https://romanceabroad.com/tickets/']");
+    public static final By FOOTER_TAB = By.xpath("//div[@class='footer-menu']");
 //    public static final By FOOTER_HELP_SITEMAP= By.xpath("//a[@id='footer_footer-menu-help-item_footer-menu-map-item']");
 //    public static final By FOOTER_ABOUT_HOW_IT_WORKS= By.xpath("//a[@href='https://romanceabroad.com/content/view/how-it-works']");
 //    public static final By FOOTER_ABOUT_NEWS= By.xpath("//a[@href='https://romanceabroad.com/news/']");

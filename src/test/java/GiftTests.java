@@ -20,6 +20,6 @@ public class GiftTests extends BaseUI {
         giftPage.clickLinkGift();
         giftPage.clickGiftSearchField();
         giftPage.clickButtonGiftSearch();
-        //if/else
+
     }
 }

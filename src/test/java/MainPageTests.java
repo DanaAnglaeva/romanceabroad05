@@ -1,6 +1,7 @@
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.List;
 
 public class MainPageTests extends BaseUI {
@@ -20,22 +21,23 @@ public class MainPageTests extends BaseUI {
     @Test
     public void testMainPageBookNowSave60() {
         mainPage.clickHomePageBookNow();
-
         homePageBookNow = driver.getCurrentUrl();
         System.out.println(homePageBookNow);
         Assert.assertEquals(homePageBookNow, Data.expectedHomePageBookNow);
     }
 
-    @Test
-    public void testMainPageJoinToday() {
-        mainPage.clickHomePageJoinToday();
+    @Test//Lesson 12 AjaxscrollToButtom
+    public void testMainPageJoinTodaywithAjaxclick() {
+        mainPage.scrollToBottomOfPage();
+        mainPage.ajaxClick(Locators.HOME_PAGE_JOIN_TODAY);
         homePageJoinToday = driver.getCurrentUrl();
         System.out.println(homePageJoinToday);
         Assert.assertEquals(homePageJoinToday, Data.expectedHomePageJoinToday);
     }
 
-    @Test
-    public void testMainPageSupportEmail() {
+    @Test //Lesson12 //AjaxClick
+    public void testMainPageSupportEmailWithAjaxClick() {
+        mainPage.ajaxClick(Locators.LINK_HOME_PAGE);
         mainPage.clickHomePageSupportByEmail();
     }
 
@@ -48,7 +50,7 @@ public class MainPageTests extends BaseUI {
     @Test//test have moved to Registration test /  Lesson 9
     public void test9Loop() {  //for iteration
 
-        List<WebElement> links = driver.findElements(Locators.HOME_PAGE_MAIN_LINK);
+        List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());
         for (int i = 0; i < links.size(); i++) {
             String info = links.get(i).getText();
@@ -56,7 +58,7 @@ public class MainPageTests extends BaseUI {
 
             links.get(i).click();
             driver.get(mainUrl);
-            links = driver.findElements(Locators.HOME_PAGE_MAIN_LINK);
+            links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         }
     }
 }

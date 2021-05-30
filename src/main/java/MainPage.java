@@ -54,27 +54,22 @@ public class MainPage extends BaseActions {
          WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
          checkboxConfirmation.click();
     }
-
     public void clickLinkHomePage() {
         driver.findElement(Locators.LINK_HOME_PAGE).click();
     }
     public void clickHomePageBookNow() {
         driver.findElement(Locators.HOME_PAGE_BOOK_NOW).click();
-
     }
     public void clickHomePageJoinToday() {
         driver.findElement(Locators.HOME_PAGE_JOIN_TODAY).click();
     }
-
     public void clickHomePageSupportByEmail() {
         driver.findElement(Locators.HOME_PAGE_SUPPORT_BY_EMAIL).click();
     }
-
     public void clickIframeYoutube() {
         WebElement ele = driver.findElement(Locators.IFRAME_YOUTUBE);
         driver.switchTo().frame(ele);
     }
-
     public void clickButtonIframeYoutube() {
         driver.findElement(Locators.YOUTUBE_BUTTON_INSIDE_IFRAME_).click();
 

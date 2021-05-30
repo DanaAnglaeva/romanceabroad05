@@ -7,6 +7,7 @@ public class Data {
     public static final String phone = "Tester123";
 
     //Home data
+    public static final String mainUrl = "https://romanceabroad.com";
     public static final String expectedUrlHome = "https://romanceabroad.com/#";
     public static final String expectedHomePageBookNow = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";
     public static final String expectedHomePageJoinToday = "https://romanceabroad.com/#";

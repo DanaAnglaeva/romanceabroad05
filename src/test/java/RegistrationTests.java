@@ -1,8 +1,9 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class RegistrationTests extends BaseUI {
 
@@ -20,68 +21,80 @@ public class RegistrationTests extends BaseUI {
         mainPage.completeSecondPartOfRegistration();
 
     }
-    @Test  //Lesson9 If / Else
-    public void test6CheckboxConfirmationTestIfSelected () {
+
+    @Test  //Lesson9 // homework// If / Else
+    public void testCheckboxConfirmationTestIfSelected() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
         WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
         if (!checkbox.isSelected()) {
             checkbox.click();
-            System.out.println("Checkbox is selected!");
         }
     }
-        @Test //  Lesson 10 need add action?????
 
-        public void testWebElementCheckboxIfNotSelected () {
+    @Test //  Lesson 9 //Homework //   If/Else
+
+    public void testWebElementIfCheckboxIsSelected() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
+        WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
 
-        WebElement checkbox = driver.findElement((Locators.BUTTON_REGISTRATION));
-
-        if (checkbox.isSelected()) {
+        if (!checkbox.isSelected()) {
             checkbox.click();
+            System.out.println("Checkbox is selected!");
+
         }
     }
 
-       @Test //  Lesson 10 Assertions
+    @Test //  Lesson 10 Assertions
 
-        public void testWebElementAssertFail () {
+    public void testWebElementIfCheckboxIsNotSelectedAssertFail() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
         mainPage.clickCheckboxConfirmation();
-        WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
-        if (driver.findElement(Locators.LINK_SEARCH).isSelected()) {
+        WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
+        if (checkboxConfirmation.isSelected()) {
             checkboxConfirmation.click();
         } else {
             Assert.fail("Checkbox is already selected");
         }
     }
+
         @Test //  Lesson 10 Assertions
         public void testWebElementAssertTrue () {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
-        mainPage.clickCheckboxConfirmation();
-        WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
-        if (!driver.findElement(Locators.LINK_SEARCH).isSelected()) {
-            checkboxConfirmation.click();
-        } else {
-            Assert.fail("Checkbox is already selected");
+            mainPage.completeSecondPartOfRegistration();
+            mainPage.clickCheckboxConfirmation();
+            WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
+            if (!driver.findElement(Locators.LINK_SEARCH).isSelected()) {
+                checkboxConfirmation.click();
+            } else {
+                Assert.fail("Checkbox is already selected");
+            }
+
+        }
+
+    @Test//test have moved to Registration test /  Lesson 9
+    public void test9Loop() {  //for iteration
+
+        List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
+        System.out.println(links.size());
+        for (int i = 0; i < links.size(); i++) {
+            String info = links.get(i).getText();
+            System.out.println(info);
+
+            links.get(i).click();
+            driver.get(mainUrl);
+            links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         }
 
     }
 
-    // 3 types of hard assertions
-    public void validateAssertions(){
-      Assert.assertEquals("Web", "Web is");
-      Assert.assertTrue((driver.findElement(By.xpath("//a")).isSelected()), "Element is not displayed");
-      Assert.fail("Element is not displayed");
 
-
-    }
 }
 
 
