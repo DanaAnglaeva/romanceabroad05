@@ -9,7 +9,6 @@ public class BlogTests extends BaseUI {
     String currentUrlBlog;
 
     @Test //Homework Lesson8 / POM
-
     public void BlogTests() {
 
         blogPage.clickLinkBlog();
@@ -18,18 +17,20 @@ public class BlogTests extends BaseUI {
         Assert.assertEquals(currentUrlBlog, Data.expectedUrlBlog);
     }
 
-    //Ask Alex, links did not opened????or opened very quick
-    @Test    //test have moved to Registration test /  Lesson 10//for iteration with BlogPage
+       @Test    //  Lesson 10//for iteration with BlogPage
     public void testBlogLoop() {
+
         blogPage.clickLinkBlog();
         List<WebElement> links = driver.findElements(Locators.BLOG_ALL_MENU);
         System.out.println(links.size());
+
         for (int i = 0; i < links.size(); i++) {
             String info = links.get(i).getText();
+
             System.out.println(info);
             links.get(i).click();
             blogPage.clickLinkBlog();
-            //    driver.get(mainUrl);
+            driver.get(mainUrl);
             links = driver.findElements(Locators.BLOG_ALL_MENU);
         }
     }
@@ -42,10 +43,10 @@ public class BlogTests extends BaseUI {
         for (int i = 0; i < links.size(); i++) {
             String info = links.get(i).getText();
             System.out.println(info);
-
             links.get(i).click();
-            driver.get(mainUrl);
-            links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
+            blogPage.clickLinkBlog();
+  //          driver.get(mainUrl);
+            links = driver.findElements(Locators.BLOG_TAB_MENU);
         }
 
     }
@@ -63,7 +64,7 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test  //Lesson 9 If/else//contains text!!!//Homework//Test have moved to BlogTests
+    @Test  //Lesson 9 If/else//contains text!!!//Homework
     public void testBlogIsContainsTextIfElsePassed() {
         blogPage.clickLinkBlog();
         WebElement blogTabMenu = driver.findElement(Locators.BLOG_TAB_MENU);
@@ -73,9 +74,9 @@ public class BlogTests extends BaseUI {
             System.out.println("This page exist!");
         } else {
             Assert.fail("Not found this page");
+
         }
     }
-
     @Test //Web element is displayed //Lesson9/TC have moved to BlogTests
     public void testBlogTabIsDisplayedIfElsePassed() {
 

@@ -34,31 +34,6 @@ public class Conditions extends BaseUI {
         }
     }
 
-    @Test
-    public void test7ArrayListWithString() {
-
-        List<String> crunchifyList1 = new ArrayList<>(Arrays.asList("Kiwi", "orange", "melon"));
-        String element = crunchifyList1.get(0);
-        System.out.println(element);
-    }
-
-    @Test
-    public void test8ArrayListContainsTextWithIf() {
-
-        List<String> crunchifyList1 = new ArrayList<>(Arrays.asList("Kiwi", "orange", "melon"));
-        if (crunchifyList1.contains("orange")) {
-            System.out.println(crunchifyList1);
-        }
-    }
-
-    @Test
-    public void test8ArrayListWithInteger() {  //integers are always without ""
-
-        List<Integer> crunchifyList1 = new ArrayList<>(Arrays.asList(5, 10, 19));
-        int sum = crunchifyList1.get(1) + crunchifyList1.get(2);
-        System.out.println(sum);
-    }
-
     @Test//test have moved to Registration test /  Lesson 10
     public void test9Loop() {  //for iteration
 
@@ -74,9 +49,7 @@ public class Conditions extends BaseUI {
         }
 
     }
-
-    //Ask Alex,why links did not opened????
-    @Test    //test have moved to Registration test /  Lesson 10//for iteration with BlogPage
+        @Test    //test have moved to Registration test /  Lesson 10//for iteration with BlogPage
     public void testBlogLoop() {
         blogPage.clickLinkBlog();
         List<WebElement> links = driver.findElements(Locators.BLOG_ALL_MENU);
@@ -143,7 +116,7 @@ public class Conditions extends BaseUI {
         }
     }
 
-    @Test //Lesson 9 // Homework //TC have moved to BlogTests
+    @Test //Lesson 9 // Homework //TC have moved to BlogTests//not useful test
     public void testBlogIfElseForAllLinksPassed() {
 
         blogPage.clickLinkBlog();
@@ -210,37 +183,6 @@ public class Conditions extends BaseUI {
             System.out.println("This page exist!");
         } else {
             Assert.fail("Not found this pages");
-        }
-    }
-
-    @Test    //  Lesson 11//
-    public void testBlogActionsInsideLoopInteger() {
-
-        List<Integer> crunchifyList1 = new ArrayList<>(Arrays.asList(5, 10, 19));
-
-        crunchifyList1.add(10);
-        System.out.println(crunchifyList1);
-
-        for (int i = 0; i < crunchifyList1.size(); i++) {
-            int element = crunchifyList1.get(i);
-        }
-    }
-
-    @Test    //  Lesson 11
-    public void testBlogActionsInsideLoopString() {
-        String phrase = "Melon is inside list";
-        List<String> crunchifyList1 = new ArrayList<>(Arrays.asList("apple", "kiwi", "Orange"));
-
-        crunchifyList1.add("melon");
-        System.out.println(crunchifyList1);
-
-        for (int i = 0; i < crunchifyList1.size(); i++) {
-            String element = crunchifyList1.get(i);
-            System.out.println(i + " iteration");
-            if (element.contains("melon")) {
-                System.out.println("melon inside list");
-            }
-
         }
     }
 

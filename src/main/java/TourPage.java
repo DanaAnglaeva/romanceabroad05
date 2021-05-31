@@ -11,12 +11,18 @@ public class TourPage extends BaseActions {
         driver.findElement(Locators.LINK_TOUR).click();
     }
 
-    public void clickLinkTourSearchField() {
-        driver.findElement(Locators.TOUR_SEARCH_FIELD).sendKeys(Data.tourSearchField);
+    public void clickSearchFieldVipTourToUkraine() {
+        driver.findElement(Locators.TOUR_SEARCH_FIELD).sendKeys(Data.searchFieldVipTourToUkraine);
     }
 
     public void clickButtonTourSearch() {
         driver.findElement(Locators.BUTTON_SEARCH_TOUR).click();
+    }
+    public void clickButtonQuickView() {
+        driver.findElement(Locators.BUTTON_QUICK_VIEW).click();
+    }
+    public void clickButtonPayWithPayPal() {
+        driver.findElement(Locators.BUTTON_PAY_WITH_PAYPAL).click();
     }
 
 

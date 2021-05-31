@@ -12,7 +12,7 @@ public class BlogPage extends BaseActions {
     public void clickLinkBlog() {
 
         driver.findElement(Locators.LINK_BLOG).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+ //       driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
 }

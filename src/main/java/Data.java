@@ -25,7 +25,7 @@ public class Data {
 
     //Tour data
     public static final String expectedUrlTour = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";
-    public static final String tourSearchField = "VIP Individual tour to Ukraine";
+    public static final String searchFieldVipTourToUkraine = "VIP Individual tour to Ukraine";
 
     //Blog data
     public static final String expectedUrlBlog = "https://romanceabroad.com/content/view/blog";
