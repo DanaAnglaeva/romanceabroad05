@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,6 @@ public class MainPage extends BaseActions {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.TEXT_FIELD_PASSWORD)));
         driver.findElement(Locators.TEXT_FIELD_PASSWORD).sendKeys(Data.password);
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
-
     }
 
     public void completeSecondPartOfRegistration() {
@@ -35,20 +35,16 @@ public class MainPage extends BaseActions {
         }
         driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(generateNewNumber(Data.nickname, 5));
         driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_DAY).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_DAY_2);
+        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_DAY);
 
         driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_MONTH).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_MONTH_JUNE);
+        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_MONTH);
 
         driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_YEAR).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_YEAR_2001);
+        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_YEAR);
 
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
-        //ask Alex maybe we need spit boolean method with registration test, because need comment before running
-        // running search test CheckBox confirmation
-//        boolean selectedCheckbox = checkboxConfirmation.isSelected();
-//        System.out.println(selectedCheckbox + "!!!!!");
     }
          public void clickCheckboxConfirmation() {
          WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
@@ -70,9 +66,15 @@ public class MainPage extends BaseActions {
         WebElement ele = driver.findElement(Locators.IFRAME_YOUTUBE);
         driver.switchTo().frame(ele);
     }
+
     public void clickButtonIframeYoutube() {
         driver.findElement(Locators.YOUTUBE_BUTTON_INSIDE_IFRAME_).click();
 
+    }
+    public int verifyIframeYoutubeSize() {
+       int size = driver.findElements(By.xpath("//iframe")).size();
+        System.out.println(size + ""+"iFrame number");
+        return size;
     }
 
 }

@@ -1,26 +1,27 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class TourTests extends BaseUI {
     String currentUrlTour;
 
-    @Test
-    public void testLinkTour() {
+    public static final boolean testCase11 = true;
+    public static final boolean testCase12 = false;
+    public static final boolean testCase13 = true;
+
+    @Test(priority = 2,enabled = testCase12, groups = {"user","admin", "ie"})
+    public void testLinkTourTestCase12() {
 
         tourPage.clickLinkTourPage();
         currentUrlTour = driver.getCurrentUrl();
         System.out.println(currentUrlTour);
         Assert.assertEquals(currentUrlTour, Data.expectedUrlTour);
     }
-
-    @Test  // Homework: SendKeys
-    public void testSearchTour() {
-
+    @Test (priority = 3,enabled = testCase13, groups = {"user","admin"})
+    // Homework: SendKeys
+    public void testSearchTourTestCase13() {
         tourPage.clickLinkTourPage();
         tourPage.clickSearchFieldVipTourToUkraine();
         tourPage.clickButtonTourSearch();
@@ -29,9 +30,9 @@ public class TourTests extends BaseUI {
 //        tourPage.clickButtonPayWithPayPal();
         tourPage.clickLinkTourPage();
     }
-
-        @Test //Homework //Lesson12
-        public void testLoops () {
+        @Test (priority = 1,enabled = testCase11, groups = {"user","admin", "ie"})
+        //Homework //Lesson12
+        public void testLoopsTestCase11 () {
             tourPage.clickLinkTourPage();
             List<WebElement> links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             System.out.println(links.size());
@@ -46,8 +47,6 @@ public class TourTests extends BaseUI {
                links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             }
         }
-
-
-    }
+}
 
 

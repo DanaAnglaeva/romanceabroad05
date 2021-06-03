@@ -8,10 +8,10 @@ public class HeaderPage extends BaseActions {
     }
 
     public void clickHeaderDropDownMenu() {
-        driver.findElement(Locators.HEADER_DROP_DOWN_MENU).click();
+        driver.findElement(Locators.HEADER_DROPDOWN_BUTTON).click();
     }
-   public void clickCloseHeaderDropDownMenu() {
-        driver.findElement(Locators.HEADER_CLOSE_DROP_DOWN_MENU).click();
+   public void clickCloseSignDropDownMenu() {
+        driver.findElement(Locators.HEADER_DROP_DOWN_MENU_CLOSE_SIGN).click();
     }
 
     public void clickHeaderGigtSignIn() {
@@ -26,7 +26,7 @@ public class HeaderPage extends BaseActions {
         driver.findElement(Locators.HEADER_INDIVIDUAL_TRIP_TO_UKRAINE).click();
     }
 
-    public void clickHeadrlerLogoHeart() {
+    public void clickHeaderLogoHeart() {
         driver.findElement(Locators.HEADER_ROMANCE_LOGO_HEART).click();
     }
 

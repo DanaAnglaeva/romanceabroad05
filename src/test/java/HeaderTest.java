@@ -6,11 +6,11 @@ public class HeaderTest extends BaseUI {
     public void testHeader (){
            howWeWorkPage.clickLinkHowWeWork();
            headerPage.clickHeaderDropDownMenu();
-           headerPage.clickCloseHeaderDropDownMenu();
+           headerPage.clickCloseSignDropDownMenu();
            headerPage.clickHeaderGigtSignIn();
            headerPage.clickHeaderTourToUkrain();
            headerPage.clickHeaderIndividualTripToUkraine();
-           headerPage.clickHeadrlerLogoHeart();
+           headerPage.clickHeaderLogoHeart();
            howWeWorkPage.clickLinkHowWeWork();
            headerPage.clickHeaderButtonFindPeople();
            headerPage.clickHeaderButtonLogin();

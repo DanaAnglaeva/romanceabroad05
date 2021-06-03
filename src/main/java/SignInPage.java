@@ -35,7 +35,8 @@ public class SignInPage extends BaseActions {
         public void clickLinkForgotPassword() {
             driver.findElement(Locators.LINK_FORGOT_PASSWORD).click();
     }
-        public void RestoreUserPassword() {
+
+    public void RestoreUserPassword() {
         driver.findElement(Locators.RESTORE_PASSWORD_EMAIL_FIELD).sendKeys(Data.email);
         driver.findElement(Locators.RESTORE_PASSWORD_BUTTON_SAVE).click();
     }

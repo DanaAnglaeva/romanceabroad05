@@ -1,7 +1,16 @@
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class FooterTests extends BaseUI {
 
+    @Test //TC moved to FooterTC//Ajax.click lesson
+    public void testWithAjaxByIndex() {
+        searchPage.clickLinkSearch();
+        searchPage.ajaxClick(Locators.FOOTER_TAB, 1);
+    }
+}
 //    @Test
 //
 //    public void FooterTest (){
@@ -14,4 +23,4 @@ public class FooterTests extends BaseUI {
 //        footerPage.clickFooterPolicyTermsOfUse();
 //        footerPage.clickFooterOnlineAdvertisingLink();
 //    }
-}
+

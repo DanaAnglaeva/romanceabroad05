@@ -45,10 +45,8 @@ public class BlogTests extends BaseUI {
             System.out.println(info);
             links.get(i).click();
             blogPage.clickLinkBlog();
-  //          driver.get(mainUrl);
             links = driver.findElements(Locators.BLOG_TAB_MENU);
         }
-
     }
 
     @Test //Web element is displayed//Lesson 9// TC have moved to BlogTests
@@ -62,6 +60,7 @@ public class BlogTests extends BaseUI {
         } else {
             Assert.fail("Not found this page");
         }
+
     }
 
     @Test  //Lesson 9 If/else//contains text!!!//Homework

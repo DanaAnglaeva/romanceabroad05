@@ -2,25 +2,27 @@
 
 <suite name="TestSuite" parallel="none" >
 
-    <test name="IETestCases">
-        <parameter name="browser" value="ie"/>
-        <classes>
-            <class name ="BlogTests"/>
-        </classes>
+     <test name="ChromeTestCases">
+         <parameter name="browser" value="chrome"/>
 
-    </test>
-    <test name="FirefoxTestCases">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name ="BlogTests"/>
-        </classes>
+         <groups>
+             <run>
+                 <exclude name="ie"/>
+                 <include name="admin"/>
+                 <include name="user"/>
+             </run>
+         </groups>
+         <classes>
+              <class name="TourTests">
+             <methods>
+             <include name=".*TestCase12.*"/>
+             <include name=".*TestCase11.*"/>
+             <include name=".*TestCase13.*"/>
 
-    </test>
-    <test name="ChromeTestCases">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name ="BlogTests"/>
-        </classes>
+         </methods>
+        </class>
+         </classes>
 
-    </test>
+     </test>
+
 </suite>

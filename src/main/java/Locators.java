@@ -12,10 +12,11 @@ public class Locators {
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
     public static final By DROP_DOWN_LIST_SELECT_BY_DAY = By.cssSelector("#daySelect");
     public static final By DROP_DOWN_LIST_SELECT_BY_MONTH = By.cssSelector("#monthSelect");
-    public static final By USERS_BIRTHDAY_SELECTED_DAY_2 = By.xpath("//li[@data-handler='selectMonth']//a[text()='Jun']");
-    public static final By USERS_BIRTHDAY_SELECTED_MONTH_JUNE = By.xpath("//li[@data-handler='selectDay']//a[text()='2']");
-    public static final By USERS_BIRTHDAY_SELECTED_YEAR_2001 = By.xpath("//li[@data-handler='selectYear']//a[text()='2001']");
     public static final By DROP_DOWN_LIST_SELECT_BY_YEAR = By.cssSelector("#yearSelect");
+
+    public static final By USERS_BIRTHDAY_SELECTED_MONTH = By.xpath("//li[@data-handler='selectMonth']//a[text()='Jun']");
+    public static final By USERS_BIRTHDAY_SELECTED_DAY = By.xpath("//li[@data-handler='selectDay']//a[text()='2']");
+    public static final By USERS_BIRTHDAY_SELECTED_YEAR = By.xpath("//li[@data-handler='selectYear']//a[text()='2001']");
     public static final By CHECKBOX_CONFIRMATION_BUTTON = By.cssSelector("input#confirmation");
 
     //MainPageTests
@@ -25,7 +26,7 @@ public class Locators {
     public static final By HOME_PAGE_BOOK_NOW = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
     public static final By HOME_PAGE_JOIN_TODAY = By.xpath("//a[text()='JOIN TODAY!']");
     public static final By HOME_PAGE_SUPPORT_BY_EMAIL = By.xpath("//a[@href='mailto:support@romanceabroad.com']");
-    public static final By TAB_OF_MAIN_PAGE = By.xpath("//ul[@class='navbar-nav']//li");
+    public static final By TAB_OF_MAIN_PAGE = By.xpath("//ul[@class='navbar-nav']//li/a");
 
 
     //HowWeWork Tests
@@ -72,18 +73,20 @@ public class Locators {
     public static final By RESTORE_PASSWORD_BUTTON_SAVE = By.xpath("//input[@type='submit']");
 
     //Header Tests
-    public static final By HEADER_DROP_DOWN_MENU = By.cssSelector(".uam-top.link-open-menu.btn-slide");
-    public static final By HEADER_CLOSE_DROP_DOWN_MENU = By.cssSelector(".fa.fa-times.close_left_menu");
+    public static final By HEADER_DROPDOWN_BUTTON = By.xpath("//header[@id='main-menu-container']//i[@class='fa fa-bars fa-lg item']");
+    public static final By HEADER_DROP_DOWN_MENU_CLOSE_SIGN = By.cssSelector(".fa.fa-times.close_left_menu");
     public static final By HEADER_GIFT_SIGN = By.cssSelector(".fa.fa-gift.fa-lg");
     public static final By HEADER_TOUR_TO_UKRAINE = By.xpath("//a[text()='Tour to Ukraine']");
     public static final By HEADER_INDIVIDUAL_TRIP_TO_UKRAINE = By.xpath("//a[text()='Individual trip to Ukraine']");
     public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//img[@src='/application/views/flatty/logo/mini_logo.png']");
     public static final By HEADER_BUTTON_FIND_PEOPLE = By.xpath("//button[@id='main_search_button_user_line']");
     public static final By HEADER_BUTTON_LOGIN = By.cssSelector("#ajax_login_link");
+    public static final By HEADER_LEFT_DROPDOWN_MENU = By.cssSelector("//div[@class='main-menu']//ul");
 
     //Footer Tests
     public static final By FOOTER_HELP_CONTACT_US = By.xpath("//a[@href='https://romanceabroad.com/tickets/']");
-    public static final By FOOTER_TAB = By.xpath("//div[@class='footer-menu']");
+   // public static final By FOOTER_TAB = By.xpath("//div[@class='footer-menu']");
+    public static final By FOOTER_TAB = By.xpath("//div[@class='footer-menu']//li//a");
 //    public static final By FOOTER_HELP_SITEMAP= By.xpath("//a[@id='footer_footer-menu-help-item_footer-menu-map-item']");
 //    public static final By FOOTER_ABOUT_HOW_IT_WORKS= By.xpath("//a[@href='https://romanceabroad.com/content/view/how-it-works']");
 //    public static final By FOOTER_ABOUT_NEWS= By.xpath("//a[@href='https://romanceabroad.com/news/']");

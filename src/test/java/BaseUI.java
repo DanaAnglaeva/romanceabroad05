@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.lang.reflect.Method;
 
-public class BaseUI {
+public class BaseUI<alwaysRun> {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -28,7 +28,8 @@ public class BaseUI {
     FooterPage footerPage;
     SoftAssert softAssert = new SoftAssert();
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"user", "admin","ie"}, alwaysRun = true)
+
     @Parameters("browser")
 
     public void setup(@Optional("chrome") String browser, Method method){

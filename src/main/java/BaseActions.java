@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.util.List;
+import java.util.concurrent.BlockingDeque;
 
 public class BaseActions {
 
@@ -26,10 +27,10 @@ public class BaseActions {
         return name + RandomStringUtils.random(lenght, "123");
     }
 
-    public void getDropDownListByIndex(By locator, int index) {
-        Select select = new Select(driver.findElement(locator));
-        select.selectByIndex(index);
-    }
+//    public void getDropDownListByIndex(int index) {
+//        Select select = new Select(driver.findElement(locator));
+//        select.selectByIndex(index);
+//    }
 
     public void getDropDownListByText(By locator, String text) {
         Select select = new Select(driver.findElement(locator));

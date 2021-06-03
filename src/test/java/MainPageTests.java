@@ -47,6 +47,14 @@ public class MainPageTests extends BaseUI {
         mainPage.clickButtonIframeYoutube();
     }
 
+    @Test // Iframe Homework Lesson 13
+    public void testIframeYoutubeSize() {
+        int numbersOfIframes = mainPage.verifyIframeYoutubeSize();
+        Assert.assertTrue(numbersOfIframes > 0);
+        mainPage.verifyIframeYoutubeSize();
+
+    }
+
     @Test//test have moved to Registration test /  Lesson 9
     public void test9Loop() {  //for iteration
 
@@ -61,4 +69,15 @@ public class MainPageTests extends BaseUI {
             links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         }
     }
+    @Test   // Homework Lesson 10,16 // did not open links
+    public void SmokeTestMainPage() {  //for iteration with BlogPage
+
+        List<WebElement> mainTabs = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
+        for (int i = 0; i < mainTabs.size(); i++) {
+            mainTabs.get(i).click();
+            driver.get(Data.mainUrl);
+            mainTabs = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
+        }
+    }
+
 }

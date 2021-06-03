@@ -5,16 +5,18 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class RegistrationTests extends BaseUI {
+    public class RegistrationTests extends BaseUI {
 
-//    String name = "Al";
-//    By BUTTON_SUBMIT = By.xpath("//a");
-//    int number = 3;
-//    boolean requirement = true;
-//    boolean requirement2 = false;
+        public static final boolean testCase1 = true;
+        public static final boolean testCase2 = true;
+        public static final boolean testCase3 = true;
+        public static final boolean testCase4 = false;
+        public static final boolean testCase5 = true;
+        public static final boolean testCase6 = false;
 
-    @Test
-    public void testRegistration() {
+    @Test(priority = 1,enabled = testCase1, groups = {"user","admin"})
+            //Lesson 16
+    public void testRegistrationTestCase1() {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_REGISTRATION));
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
@@ -22,8 +24,8 @@ public class RegistrationTests extends BaseUI {
 
     }
 
-    @Test  //Lesson9 // homework// If / Else
-    public void testCheckboxConfirmationTestIfSelected() {
+    @Test (priority = 1,enabled = testCase2, groups = {"user","admin"}) //Lesson9,16 // homework// If / Else
+    public void testCheckboxConfirmationTestIfSelectedTestCase2() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
@@ -33,9 +35,9 @@ public class RegistrationTests extends BaseUI {
         }
     }
 
-    @Test //  Lesson 9 //Homework //   If/Else
+    @Test(priority = 2,enabled = testCase3, groups = {"user","admin", "ie"}) //  Lesson 9,16 //Homework //   If/Else
 
-    public void testWebElementIfCheckboxIsSelected() {
+    public void testWebElementIfCheckboxIsSelectedTestCase3() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
@@ -44,13 +46,11 @@ public class RegistrationTests extends BaseUI {
         if (!checkbox.isSelected()) {
             checkbox.click();
             System.out.println("Checkbox is selected!");
-
         }
     }
+    @Test (priority = 3,enabled = testCase4, groups = {"user","admin", "ie"})//  Lesson 10,16 Assertions
 
-    @Test //  Lesson 10 Assertions
-
-    public void testWebElementIfCheckboxIsNotSelectedAssertFail() {
+    public void testWebElementIfCheckboxIsNotSelectedAssertFailTestCase4() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
@@ -62,9 +62,8 @@ public class RegistrationTests extends BaseUI {
             Assert.fail("Checkbox is already selected");
         }
     }
-
-        @Test //  Lesson 10 Assertions
-        public void testWebElementAssertTrue () {
+    @Test(priority = 3,enabled = testCase5, groups = {"user","admin", "ie"}) //  Lesson 10,16 Assertions
+    public void testWebElementAssertTrueTestCase5 () {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration();
             mainPage.completeSecondPartOfRegistration();
@@ -75,11 +74,10 @@ public class RegistrationTests extends BaseUI {
             } else {
                 Assert.fail("Checkbox is already selected");
             }
-
         }
-
-    @Test//test have moved to Registration test /  Lesson 9
-    public void test9Loop() {  //for iteration
+    @Test(priority = 2,enabled = testCase6, groups = {"user","admin", "ie"})
+                //test have moved to Registration test /  Lesson 9,16
+    public void test9LoopTestCase6() {  //for iteration
 
         List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());
@@ -91,10 +89,7 @@ public class RegistrationTests extends BaseUI {
             driver.get(mainUrl);
             links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         }
-
     }
-
-
 }
 
 

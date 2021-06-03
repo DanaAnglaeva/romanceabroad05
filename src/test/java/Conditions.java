@@ -244,7 +244,7 @@ public class Conditions extends BaseUI {
         }
     }
 
-    @Test
+    @Test //TC moved to FooterTC//Ajax.click lesson
     public void testWithAjaxByIndex() {
         searchPage.clickLinkSearch();
         searchPage.ajaxClick(Locators.FOOTER_TAB, 1);
