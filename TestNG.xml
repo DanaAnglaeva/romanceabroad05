@@ -2,27 +2,51 @@
 
 <suite name="TestSuite" parallel="none" >
 
-     <test name="ChromeTestCases">
-         <parameter name="browser" value="chrome"/>
+        <test name="IETestCases">
+            <parameter name="browser" value="ie"/>
+            <classes>
+                <class name ="MediaTests"/>
+            </classes>
+        </test>
 
-         <groups>
-             <run>
-                 <exclude name="ie"/>
-                 <include name="admin"/>
-                 <include name="user"/>
-             </run>
-         </groups>
-         <classes>
-              <class name="TourTests">
-             <methods>
-             <include name=".*TestCase12.*"/>
-             <include name=".*TestCase11.*"/>
-             <include name=".*TestCase13.*"/>
+        <test name="FirefoxTestCases">
+            <parameter name="browser" value="firefox"/>
+            <classes>
+                <class name ="MediaTests"/>
+            </classes>
 
-         </methods>
-        </class>
-         </classes>
+        </test>
 
-     </test>
+        <test name="ChromeTestCases">
+            <parameter name="browser" value="chrome"/>
+            <classes>
+                <class name ="MediaTests"/>
+            </classes>
 
+        </test>
 </suite>
+
+<!--         <test name="ChromeTestCases">-->
+<!--         <parameter name="browser" value="chrome"/>-->
+
+<!--         <groups>-->
+<!--             <run>-->
+<!--                 <exclude name="ie"/>-->
+<!--                 <include name="admin"/>-->
+<!--                 <include name="user"/>-->
+<!--             </run>-->
+<!--         </groups>-->
+<!--         <classes>-->
+<!--              <class name="TourTests">-->
+<!--             <methods>-->
+<!--             <include name=".*TestCase12.*"/>-->
+<!--             <include name=".*TestCase11.*"/>-->
+<!--             <include name=".*TestCase13.*"/>-->
+
+<!--         </methods>-->
+<!--        </class>-->
+<!--         </classes>-->
+
+<!--     </test>-->
+
+<!--</suite>-->

@@ -5,30 +5,32 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-    public class RegistrationTests extends BaseUI {
+    public class RegistrationTests<fori> extends BaseUI {
 
         public static final boolean testCase1 = true;
         public static final boolean testCase2 = true;
         public static final boolean testCase3 = true;
         public static final boolean testCase4 = false;
         public static final boolean testCase5 = true;
-        public static final boolean testCase6 = false;
+        public static final boolean testCase6 = true;
 
-    @Test(priority = 1,enabled = testCase1, groups = {"user","admin"})
-            //Lesson 16
-    public void testRegistrationTestCase1() {
-        wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_REGISTRATION));
-        mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
+        @Test(priority = 1, enabled = testCase1, groups = {"user", "admin"})
+        //Lesson 16
+        public void testRegistrationTestCase1() {
+            wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_REGISTRATION));
+            mainPage.clickJoinButton();
+            mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5),
+                    Data.day, Data.month, Data.year, Data.phone, Data. city, Data.location);
+        }
 
-    }
 
     @Test (priority = 1,enabled = testCase2, groups = {"user","admin"}) //Lesson9,16 // homework// If / Else
     public void testCheckboxConfirmationTestIfSelectedTestCase2() {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+        mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                Data.day, Data.month, Data.year, Data. city, Data.location);
         WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
         if (!checkbox.isSelected()) {
             checkbox.click();
@@ -39,8 +41,9 @@ import java.util.List;
 
     public void testWebElementIfCheckboxIsSelectedTestCase3() {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+        mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                Data.day, Data.month, Data.year, Data. city, Data.location);
         WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
 
         if (!checkbox.isSelected()) {
@@ -52,9 +55,10 @@ import java.util.List;
 
     public void testWebElementIfCheckboxIsNotSelectedAssertFailTestCase4() {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
-        mainPage.clickCheckboxConfirmation();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+        mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                Data.day, Data.month, Data.year, Data. city, Data.location);
+//        mainPage.clickCheckboxConfirmation();
         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
         if (checkboxConfirmation.isSelected()) {
             checkboxConfirmation.click();
@@ -65,9 +69,10 @@ import java.util.List;
     @Test(priority = 3,enabled = testCase5, groups = {"user","admin", "ie"}) //  Lesson 10,16 Assertions
     public void testWebElementAssertTrueTestCase5 () {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-            mainPage.completeSecondPartOfRegistration();
-            mainPage.clickCheckboxConfirmation();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                    Data.day, Data.month, Data.year, Data. city, Data.location);
+//            mainPage.clickCheckboxConfirmation();
             WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
             if (!driver.findElement(Locators.LINK_SEARCH).isSelected()) {
                 checkboxConfirmation.click();
@@ -76,8 +81,8 @@ import java.util.List;
             }
         }
     @Test(priority = 2,enabled = testCase6, groups = {"user","admin", "ie"})
-                //test have moved to Registration test /  Lesson 9,16
-    public void test9LoopTestCase6() {  //for iteration
+
+    public void test9LoopTestCase6() {  //for iteration   //test have moved to Registration test /  Lesson 9,16
 
         List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());

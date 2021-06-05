@@ -16,15 +16,16 @@ public class MainPage extends BaseActions {
         driver.findElement(Locators.BUTTON_REGISTRATION).click();
     }
 
-    public void completeFirstPartOfRegistration() {
+    public void completeFirstPartOfRegistration(String email, String password) {
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
-        driver.findElement(Locators.TEXT_FIELD_EMAIL).sendKeys(Data.email);
+        driver.findElement(Locators.TEXT_FIELD_EMAIL).sendKeys(email);
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.TEXT_FIELD_PASSWORD)));
-        driver.findElement(Locators.TEXT_FIELD_PASSWORD).sendKeys(Data.password);
+        driver.findElement(Locators.TEXT_FIELD_PASSWORD).sendKeys(password);
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
     }
 
-    public void completeSecondPartOfRegistration() {
+    public void completeSecondPartOfRegistration(String nickname, String day, String month, String year, String phone,
+                                                 String city, String location) {
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         driver.findElement(Locators.BUTTON_NEXT).click();
         try {
@@ -33,35 +34,44 @@ public class MainPage extends BaseActions {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(generateNewNumber(Data.nickname, 5));
-        driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_DAY).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_DAY);
+        driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(nickname);
 
-        driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_MONTH).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_MONTH);
+        driver.findElement(Locators.LIST_OF_DAYS).click();
+        clickValueOfLists(Locators.LIST_OF_VALUE_DAY, day);
 
-        driver.findElement(Locators.DROP_DOWN_LIST_SELECT_BY_YEAR).click();
-        driver.findElement(Locators.USERS_BIRTHDAY_SELECTED_YEAR);
+        driver.findElement(Locators.LIST_OF_MONTHS).click();
+        clickValueOfLists(Locators.LIST_OF_VALUE_MONTH, day);
 
-        driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
-        WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
+        driver.findElement(Locators.LIST_OF_YEARS).click();
+        clickValueOfLists(Locators.LIST_OF_VALUE_YEAR, day);
+
+        driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(phone);
+        driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON).click();
+
+        driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).clear();
+        driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).sendKeys(city);
+        clickValueOfLists(Locators.LIST_VALUE_LOCATION, location);
     }
-         public void clickCheckboxConfirmation() {
-         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
-         checkboxConfirmation.click();
-    }
+
+
+
+
     public void clickLinkHomePage() {
         driver.findElement(Locators.LINK_HOME_PAGE).click();
     }
+
     public void clickHomePageBookNow() {
         driver.findElement(Locators.HOME_PAGE_BOOK_NOW).click();
     }
-    public void clickHomePageJoinToday() {
-        driver.findElement(Locators.HOME_PAGE_JOIN_TODAY).click();
+
+    public void clickHomePageLinkJoinToday() {
+        driver.findElement(Locators.HOME_PAGE_LINK_JOIN_TODAY).click();
     }
+
     public void clickHomePageSupportByEmail() {
         driver.findElement(Locators.HOME_PAGE_SUPPORT_BY_EMAIL).click();
     }
+
     public void clickIframeYoutube() {
         WebElement ele = driver.findElement(Locators.IFRAME_YOUTUBE);
         driver.switchTo().frame(ele);
@@ -71,10 +81,12 @@ public class MainPage extends BaseActions {
         driver.findElement(Locators.YOUTUBE_BUTTON_INSIDE_IFRAME_).click();
 
     }
+
     public int verifyIframeYoutubeSize() {
-       int size = driver.findElements(By.xpath("//iframe")).size();
-        System.out.println(size + ""+"iFrame number");
+        int size = driver.findElements(By.xpath("//iframe")).size();
+        System.out.println(size + "" + "iFrame number");
         return size;
     }
-
 }
+
+

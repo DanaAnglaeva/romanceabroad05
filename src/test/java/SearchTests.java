@@ -122,24 +122,45 @@ public class SearchTests extends BaseUI {
         WebElement dropDownListSortBy = driver.findElement(Locators.DROP_DOWN_LIST_SORT_BY);
         searchPage.getDropDownListByValue(dropDownListSortBy, "date_created");
         softAssert.assertAll();
+
+    }
+    @Test //Lesson 14
+    public void testSelectRandomDropDownList() {
+
+        driver.findElement(Locators.LINK_SEARCH).click();
+
+        for (int i = 0; i < 10; i++) {
+            searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_SORT_BY, "Sort by");
+            mainPage.javaWaitSec(3);
+        }
+
     }
 
-//    @Test
-//    public void testWithLoop() {
-//        blogPage.clickLinkBlog();
-//        List<WebElement> blogLinks = driver.findElements(Locators.BLOG_ALL_MENU);
-//        System.out.println((blogLinks.size()));
-//
-//        for (int i = 0; i < blogLinks.size(); i++) {
-//            String info = blogLinks.get(i).getText();
-//            System.out.println(info);
-//            if (blogLinks.get(i).getText().contains("Kiev dating site") || blogLinks.get(i).getText().contains
-//                    ("Odessa dating agency")) {
-//                System.out.println("Correct action");
-//
-//            }
-//        }
-//    }
+    @Test //Lesson 14
+    public void SelectRandomDropDownListMaxAge() {
+        driver.findElement(Locators.LINK_SEARCH).click();
+
+        int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_MAX_USER_AGE);
+        System.out.println(sizeOfDropDownListSortBy);
+        for (int i = 0; i < sizeOfDropDownListSortBy; i++) {
+            searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_MAX_USER_AGE, "Sort by");
+            mainPage.javaWaitSec(3);
+        }
+
+    }
+
+    @Test //Lesson 14
+    public void SelectRandomDropDownListMinAge() {
+        driver.findElement(Locators.LINK_SEARCH).click();
+
+        int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
+        System.out.println(sizeOfDropDownListSortBy);
+        for (int i = 0; i < sizeOfDropDownListSortBy; i++) {
+            searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_MIN_USER_AGE, "Sort by");
+            mainPage.javaWaitSec(3);
+        }
+
+    }
 }
 
 

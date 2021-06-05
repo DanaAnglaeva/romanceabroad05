@@ -68,6 +68,7 @@ public class BaseUI<alwaysRun> {
         tourPage = new TourPage(driver, wait);
         headerPage = new HeaderPage(driver,wait);
         footerPage = new FooterPage(driver,wait);
+
         driver.manage().window().maximize();
         driver.get(mainUrl);
     }

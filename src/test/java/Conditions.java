@@ -3,8 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 public class Conditions extends BaseUI {
@@ -12,8 +11,9 @@ public class Conditions extends BaseUI {
     @Test //test have moved to Registration test /  Lesson 10
     public void testWebElementCheckboxIf() {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+        mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                Data.day, Data.month, Data.year, Data. city, Data.location);
 
         WebElement checkbox = driver.findElement((Locators.BUTTON_REGISTRATION));
 
@@ -25,8 +25,9 @@ public class Conditions extends BaseUI {
     @Test //test have moved to Registration test /  Lesson 10
     public void test6CheckboxConfirmationIfElse() {
         mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration();
-        mainPage.completeSecondPartOfRegistration();
+        mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+        mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
+                Data.day, Data.month, Data.year, Data. city, Data.location);
         WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
         if (!checkbox.isSelected()) {
             checkbox.click();
@@ -188,7 +189,7 @@ public class Conditions extends BaseUI {
 
     @Test//Lesson 11
     public void testLoop() {  //for iteration
-        String expectedTitle = "Ukrainian women for marriage!";
+        String expectedTitle = "Ukrainian women for marriage";
         List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());
 

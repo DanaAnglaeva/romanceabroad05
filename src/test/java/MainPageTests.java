@@ -29,12 +29,11 @@ public class MainPageTests extends BaseUI {
     @Test//Lesson 12 AjaxscrollToButtom
     public void testMainPageJoinTodaywithAjaxclick() {
         mainPage.scrollToBottomOfPage();
-        mainPage.ajaxClick(Locators.HOME_PAGE_JOIN_TODAY);
+        mainPage.clickHomePageLinkJoinToday();
         homePageJoinToday = driver.getCurrentUrl();
         System.out.println(homePageJoinToday);
         Assert.assertEquals(homePageJoinToday, Data.expectedHomePageJoinToday);
     }
-
     @Test //Lesson12 //AjaxClick
     public void testMainPageSupportEmailWithAjaxClick() {
         mainPage.ajaxClick(Locators.LINK_HOME_PAGE);
@@ -79,5 +78,9 @@ public class MainPageTests extends BaseUI {
             mainTabs = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         }
     }
+    @Test //Lesson 14 check links by elements and attributes
+    public void testLinksOnMainPage () {
+        mainPage.checkLinksOnWebPage("//a", "href");
 
+    }
 }

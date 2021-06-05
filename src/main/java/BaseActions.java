@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.util.List;
-import java.util.concurrent.BlockingDeque;
+
 
 public class BaseActions {
 
@@ -213,7 +213,21 @@ public class BaseActions {
 //        return title;
 //    }
 
+
+    public void clickValueOfLists(By locator, String text) {
+
+        List<WebElement> elements = driver.findElements(locator);
+        for (int i = 0; i < elements.size(); i++) {
+            WebElement elementOfList = elements.get(i);
+            String value = elementOfList.getText();
+            if (value.contains(text)) {
+                elementOfList.click();
+            }
+        }
+
+    }
 }
+
 
 
 
