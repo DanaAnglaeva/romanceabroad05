@@ -24,7 +24,7 @@ public class MainPage extends BaseActions {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
     }
 
-    public void completeSecondPartOfRegistration(String nickname, String day, String month, String year, String phone,
+    public void completeSecondPartOfRegistration(String nickname, String phone, String month, String day, String year,
                                                  String city, String location) {
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         driver.findElement(Locators.BUTTON_NEXT).click();
@@ -40,10 +40,10 @@ public class MainPage extends BaseActions {
         clickValueOfLists(Locators.LIST_OF_VALUE_DAY, day);
 
         driver.findElement(Locators.LIST_OF_MONTHS).click();
-        clickValueOfLists(Locators.LIST_OF_VALUE_MONTH, day);
+        clickValueOfLists(Locators.LIST_OF_VALUE_MONTH, month);
 
         driver.findElement(Locators.LIST_OF_YEARS).click();
-        clickValueOfLists(Locators.LIST_OF_VALUE_YEAR, day);
+        clickValueOfLists(Locators.LIST_OF_VALUE_YEAR, year);
 
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(phone);
         driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON).click();

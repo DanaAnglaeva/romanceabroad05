@@ -208,10 +208,10 @@ public class BaseActions {
         }
     }
 
-//    public String getAnyTitle() {
-//        String title = driver.findElement(Locators.H1_TITLE).getText();
-//        return title;
-//    }
+    public String getAnyTitle() {
+        String title = driver.findElement(Locators.H1_TITLE).getText();
+        return title;
+    }
 
 
     public void clickValueOfLists(By locator, String text) {

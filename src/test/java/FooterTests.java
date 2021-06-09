@@ -40,6 +40,7 @@ public class FooterTests extends BaseUI {
             links = driver.findElements(Locators.BLOG_ALL_MENU);
         }
     }
+
 }
 
 

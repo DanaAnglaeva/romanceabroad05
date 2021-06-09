@@ -17,13 +17,13 @@
 
         </test>
 
-        <test name="ChromeTestCases">
-            <parameter name="browser" value="chrome"/>
-            <classes>
-                <class name ="MediaTests"/>
-            </classes>
+<!--        <test name="ChromeTestCases">-->
+<!--            <parameter name="browser" value="chrome"/>-->
+<!--            <classes>-->
+<!--                <class name ="MediaTests"/>-->
+<!--            </classes>-->
 
-        </test>
+<!--        </test>-->
 </suite>
 
 <!--         <test name="ChromeTestCases">-->

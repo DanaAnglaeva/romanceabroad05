@@ -6,7 +6,7 @@ public class Data {
     public static final String nickname= "Tester123";
     public static final String day = "1";
     public static final String month = "June";
-    public static final String year = "2001";
+    public static final String year = "1990";
     public static final String phone = "(987) 654 3210";
     public static final String city = "New York City";
     public static final String location = "New York City, United States";

@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 
 public class Locators {
 
+    public static final By H1_TITLE = By.xpath("//h1");
 
     //Registration Tests
     public static final By BUTTON_REGISTRATION = By.xpath("//button[@id='show-registration-block']");
