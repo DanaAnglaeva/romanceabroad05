@@ -6,6 +6,7 @@ public class Locators {
 
     //Registration Tests
     public static final By BUTTON_REGISTRATION = By.xpath("//button[@id='show-registration-block']");
+    public static final By TOOLTIP_ERROR = By.xpath("//div[@class='tooltip']");
     public static final By TEXT_FIELD_EMAIL = By.cssSelector("input#email");
     public static final By TEXT_FIELD_PASSWORD = By.cssSelector("input#password");
     public static final By BUTTON_NEXT = By.xpath("//button[@data-action='next-page'][text()='Next']");
@@ -21,7 +22,7 @@ public class Locators {
     public static final By LIST_OF_VALUE_YEAR = By.xpath("//li[@data-handler='selectYear']");
     public static final By CHECKBOX_CONFIRMATION_BUTTON = By.cssSelector("input#confirmation");
     public static final By AUTOFILLING_FORM_LOCATION = By.xpath("//input[@name='region_name']");
-    public static final By LIST_VALUE_LOCATION = By.xpath("//div[@class='dropdown dropdown_location']//ul/li");
+    public static final By LIST_OF_VALUE_LOCATION = By.xpath("//div[@class='dropdown dropdown_location']//ul/li");
 
     //MainPageTests
     public static final By LINK_HOME_PAGE = By.xpath("//a[text() = 'HOME']");
@@ -85,7 +86,23 @@ public class Locators {
     public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//img[@src='/application/views/flatty/logo/mini_logo.png']");
     public static final By HEADER_BUTTON_FIND_PEOPLE = By.xpath("//button[@id='main_search_button_user_line']");
     public static final By HEADER_BUTTON_LOGIN = By.cssSelector("#ajax_login_link");
-    public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
+    public static final By HEADER_LIST_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
+    public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//header[@id='main-menu-container'] //i[@class='fa fa-bars fa-lg item']");
+    public static final By HEADER_SIGN_UP_FORM_LINK = By.xpath("//a[@id='user_main-menu-registration-item']");
+    public static final By SIGN_UP_USER_EMAIL_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='email']");
+    public static final By SIGN_UP_USERNAME_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='nickname']");
+    public static final By SIGN_UP_USER_PASSWORD_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='password']");
+    public static final By SIGN_UP_USER_PHONE_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='phone']");
+    public static final By SIGN_UP_USER_LOCATION_FIELD = By.xpath("//input[@name='region_name']");
+
+    public static final By SIGN_UP_LIST_OF_VALUE_DAY = By.xpath("//select[@class='form-control']");
+    public static final By SIGN_UP_LIST_OF_VALUE_MONTH = By.xpath("//select[@class='ui-datepicker-month form-control']");
+    public static final By SIGN_UP_LIST_OF_VALUE_YEAR = By.xpath("//select[@data-handler='selectYear']");
+
+    public static final By CHECKBOX_LATEST_NEWS = By.xpath("//input[@type='checkbox'][@id='sub1']");
+    public static final By CHECKBOX_TERMS_AND_CONDITIONS = By.xpath("//input[@type='checkbox'][@id='confirmation']");
+    public static final By LINK_TERMS_AND_CONDITIONS = By.xpath("//div[@class='form-group']//a[@href='https://romanceabroad.com/content/view/legal-terms']");
+    public static final By SIGN_UP_BUTTON_REGISTER = By.xpath("//input[@name='btn_register']");
 
     //Footer Tests
     public static final By FOOTER_CONTACT_US = By.xpath("//a[@href='https://romanceabroad.com/tickets/' and 'Contact us']");

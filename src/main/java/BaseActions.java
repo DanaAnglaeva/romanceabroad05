@@ -22,7 +22,7 @@ public class BaseActions {
         this.driver = driver;
         this.wait = wait;
     }
-
+    //by locators
     public static String generateNewNumber(String name, int lenght) {
         return name + RandomStringUtils.random(lenght, "123");
     }
@@ -41,7 +41,7 @@ public class BaseActions {
         Select select = new Select(driver.findElement(locator));
         select.selectByValue(value);
     }
-
+    //Web elements
     public void getDropDownListByIndex(WebElement element, int index) {
         Select select = new Select(element);
         select.selectByIndex(index);
@@ -156,7 +156,6 @@ public class BaseActions {
     public void checkLinksOnWebPage(String typeElement, String attribute) {
 
         List<WebElement> links = driver.findElements(By.xpath(typeElement));
-
         System.out.println("I start taking attributes on page");
         for (int i = 0; i < links.size(); i++) {
             WebElement ele = links.get(i);
@@ -196,23 +195,11 @@ public class BaseActions {
         return 0;
     }
 
-    public void clickValueOfList(By locator, String text) {
-        List<WebElement> elements = driver.findElements(locator);
-        for (int i = 0; i < elements.size(); i++) {
-            WebElement elementOfList = elements.get(i);
-            String value = elementOfList.getText();
-            if (value.contains(text)) {
-                elementOfList.click();
-
-            }
-        }
-    }
-
     public String getAnyTitle() {
+
         String title = driver.findElement(Locators.H1_TITLE).getText();
         return title;
     }
-
 
     public void clickValueOfLists(By locator, String text) {
 
@@ -227,34 +214,6 @@ public class BaseActions {
 
     }
 }
-
-
-
-
-
-//Alex version
-//
-//    public void getDropDownListByIndex(By locator, int index) {
-//        Select select = new Select(driver.findElement(locator));
-//        select.selectByIndex(index);
-//    }
-//
-//    public void getDropDownListByText(By locator, String text) {
-//        Select select = new Select(driver.findElement(locator));
-//        select.selectByVisibleText(text);
-//    }
-//
-//    public void getDropDownListByText(WebElement element, String text) {
-//        Select select = new Select(element);
-//        select.selectByVisibleText(text);
-//    }
-//
-//    public void getDropDownListByValue(By locator, String value) {
-//        Select select = new Select(driver.findElement(locator));
-//        select.selectByValue(value);
-//    }
-//
-//
 
 
 

@@ -21,11 +21,10 @@ public class MainPage extends BaseActions {
         driver.findElement(Locators.TEXT_FIELD_EMAIL).sendKeys(email);
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.TEXT_FIELD_PASSWORD)));
         driver.findElement(Locators.TEXT_FIELD_PASSWORD).sendKeys(password);
-        wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
-    }
 
-    public void completeSecondPartOfRegistration(String nickname, String phone, String month, String day, String year,
-                                                 String city, String location) {
+    }
+    public void clickNextButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         driver.findElement(Locators.BUTTON_NEXT).click();
         try {
@@ -34,6 +33,10 @@ public class MainPage extends BaseActions {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void completeSecondPartOfRegistration(String nickname, String phone, String month, String day, String year,
+                                                 String city, String location) {
+
         driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(nickname);
 
         driver.findElement(Locators.LIST_OF_DAYS).click();
@@ -50,7 +53,7 @@ public class MainPage extends BaseActions {
 
         driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).clear();
         driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).sendKeys(city);
-        clickValueOfLists(Locators.LIST_VALUE_LOCATION, location);
+        clickValueOfLists(Locators.LIST_OF_VALUE_LOCATION, location);
     }
 
 

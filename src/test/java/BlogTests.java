@@ -53,8 +53,6 @@ public class BlogTests extends BaseUI {
     public void testBlogTabDisplayedIfElseFailed() {
 
         blogPage.clickLinkBlog();
-        blogPage.clickWebElementBlogAllTabMenu();
-
         WebElement blogTabMenu = driver.findElement(Locators.BLOG_ALL_MENU);
         if (!blogTabMenu.isDisplayed()) {
             blogTabMenu.click();

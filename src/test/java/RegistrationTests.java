@@ -1,15 +1,11 @@
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
-    public class RegistrationTests<fori> extends BaseUI {
+public class RegistrationTests<fori> extends BaseUI {
 
         public static final boolean testCase1 = true;
         public static final boolean testCase2 = true;
@@ -26,6 +22,7 @@ import java.util.List;
             mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5),
                     Data.day, Data.month, Data.year, Data.phone, Data.city, Data.location);
+            mainPage.clickNextButton();
         }
 
 
@@ -33,6 +30,7 @@ import java.util.List;
         public void testCheckboxConfirmationTestIfSelectedTestCase2() {
             mainPage.clickJoinButton();
             mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.clickNextButton();
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
                     Data.day, Data.month, Data.year, Data.city, Data.location);
             WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
@@ -47,6 +45,7 @@ import java.util.List;
         public void testWebElementIfCheckboxIsSelectedTestCase3() {
             mainPage.clickJoinButton();
             mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.clickNextButton();
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
                     Data.day, Data.month, Data.year, Data.city, Data.location);
             WebElement checkbox = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
@@ -62,6 +61,7 @@ import java.util.List;
         public void testWebElementIfCheckboxIsNotSelectedAssertFailTestCase4() {
             mainPage.clickJoinButton();
             mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.clickNextButton();
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), Data.phone,
                     Data.day, Data.month, Data.year, Data.city, Data.location);
 //        mainPage.clickCheckboxConfirmation();
@@ -77,6 +77,7 @@ import java.util.List;
         public void testWebElementAssertTrueTestCase5() {
             mainPage.clickJoinButton();
             mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
+            mainPage.clickNextButton();
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5),
                     Data.month, Data.day, Data.year, Data.phone, Data.city, Data.location);
 //            mainPage.clickCheckboxConfirmation();
@@ -104,43 +105,61 @@ import java.util.List;
             }
         }
 
-        @DataProvider(name = "Registration")
-        public static Object[][] testRegistration() throws Exception {
-            ArrayList<Object[]> out = new ArrayList<>();
-            Files.readAllLines(Paths.get("Registration.csv")).stream().forEach(s -> {
-                String[] data = s.split(",");
-                out.add(new Object[]{data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]});
-            });
-            return out.toArray(new Object[out.size()][]);
-        }
-
-        @Test(dataProvider = "Registration")
+        @Test(dataProvider = "Registration", dataProviderClass = DataProviders.class)
         public void testRegistration(String email, String password, String day, String month, String year,
                                      String phone, String city, String location) {
 
             mainPage.clickJoinButton();
             mainPage.completeFirstPartOfRegistration(email, password);
+            mainPage.clickNextButton();
             mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5), phone,
                     month, day, year, city, location);
         }
 
-        @DataProvider(name = "RegistrationContactUs")
-        public static Object[][] testRegistrationContuctUs() throws Exception {
-            ArrayList<Object[]> out = new ArrayList<>();
-            Files.readAllLines(Paths.get("RegistrationContactUs.csv")).stream().forEach(s -> {
-                String[] data = s.split(",");
-                out.add(new Object[]{data[0], data[1], data[2], data[3]});
-            });
-            return out.toArray(new Object[out.size()][]);
-        }
-
-        @Test (dataProvider = "RegistrationContactUs")
+        @Test(dataProvider = "RegistrationContactUs", dataProviderClass = DataProviders.class)
         public void testContactUsTestCase1(String name, String email, String subject, String message) {
             searchPage.clickLinkSearch();
             searchPage.ajaxClick(Locators.FOOTER_TAB, 0);
             footerPage.completeContactUsForm(name, email, subject, message);
         }
+
+        @Test(dataProvider = "SignUpUserRegistrationForm", dataProviderClass = DataProviders.class)
+        public void signUpUserRegistrationForm(String email, String username, String password, String day, String month,
+                                               String year, String phone, String city, String location) {
+            howWeWorkPage.clickLinkHowWeWork();
+            headerPage.clickHeaderLeftDropDownMenu();
+            headerPage.clickSignUpForm();
+            headerPage.completeFullSignUpRegistrationForm(email, username, password, day, month, year,
+                    phone, city, location);
+            headerPage.checkBoxNewsIsSelected();
+            headerPage.checkBoxTermsIsSelected();
+            WebElement checkboxTerms = driver.findElement(Locators.CHECKBOX_TERMS_AND_CONDITIONS);
+
+            if (!checkboxTerms.isSelected()) {
+                driver.findElement(Locators.LINK_TERMS_AND_CONDITIONS).click();
+                System.out.println("Checkbox is not selected. Terms and conditions link is opened.");
+            }
+        }
+
+        @Test(dataProvider = "Registration3", dataProviderClass = DataProviders.class)
+        public void testRegistration2(String email,String nickname, boolean requirement) {
+        System.out.println(email);
+
+        mainPage.clickJoinButton();
+        mainPage.completeFirstPartOfRegistration(email, Data.password);
+
+        if (!requirement) {
+            Assert.assertTrue(driver.findElement
+                    (Locators.TOOLTIP_ERROR).isDisplayed());
+        } else {
+            mainPage.clickNextButton();
+            mainPage.completeSecondPartOfRegistration(nickname, Data.phone,
+                    Data.month, Data.day, Data.year, Data.city, Data.location);
+        }
     }
+}
+
+
 
 
 
