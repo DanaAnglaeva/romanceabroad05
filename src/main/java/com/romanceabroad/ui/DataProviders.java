@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.testng.annotations.DataProvider;
 
 import java.nio.file.Files;
@@ -36,12 +38,23 @@ public class DataProviders {
         return out.toArray(new Object[out.size()][]);
     }
 
-    @DataProvider(name = "Registration3")
-    public static Object[][] testRegistration3() {
+    @DataProvider(name = "Registration2")
+    public static Object[][] testRegistration2() {
         return new Object[][]{
                 {Data.email_gmail,Data.generated_nickname, true},
                 {Data.invalid_email_yahoo, Data.generated_nickname, false},
                 {Data.email_hotmail, Data.generated_nickname, true},
         };
     }
+
+    @DataProvider(name = "Search")
+    public static Object[][] testSearchFeaturetestCase7() {
+        return new Object[][]{
+                {"18", "80", "Default"},
+                {"23", "35", "Name"},
+                {"31", "53", "Views"},
+                {"42", "51", "Registration date"},
+       };
+    }
+
 }

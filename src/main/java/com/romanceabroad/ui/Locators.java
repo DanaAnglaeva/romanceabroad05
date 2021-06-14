@@ -1,8 +1,8 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.By;
 
 public class Locators {
-
-    public static final By H1_TITLE = By.xpath("//h1");
 
     //Registration Tests
     public static final By BUTTON_REGISTRATION = By.xpath("//button[@id='show-registration-block']");
@@ -36,14 +36,16 @@ public class Locators {
 
     //HowWeWork Tests
     public static final By LINK_HOW_WE_WORK = By.xpath("//a[@href = 'https://romanceabroad.com/content/view/how-it-works']");
-    public static final By TITLE_OF_PAGE = By.xpath("//h1");
+    public static final By PAGES_CONTENT_LIST_OF_ALL_LINKS = By.xpath("//div[@class='info-content-block wysiwyg']//ul");
+    public static final By LIST_OF_LINKS = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']//li");
+    public static final By H1_TITLE_OF_PAGE = By.xpath("//h1");
 
     //Search Tests
     public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
     public static final By DROP_DOWN_LIST_SORT_BY = By.xpath("//div[@class='form-inline']//select");
     public static final By DROP_DOWN_LIST_MIN_USER_AGE = By.cssSelector("#age_min");
     public static final By DROP_DOWN_LIST_MAX_USER_AGE = By.xpath("//div[@class='col-xs-5 no-padding-right']//select");
-    public static final By BUTTON_SEARCH_BY_AGE = By.cssSelector("#main_search_button_user_advanced");
+    public static final By BUTTON_SEARCH = By.cssSelector("#main_search_button_user_advanced");
 
     //Media Tests
     public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");
@@ -63,8 +65,7 @@ public class Locators {
 
     //Blog Tests
     public static final By LINK_BLOG = By.xpath("//a[@href='https://romanceabroad.com/content/view/blog']");
-    public static final By BLOG_ALL_MENU = By.xpath("//div[@class='info-content-block wysiwyg']//ul");
-    public static final By BLOG_TAB_MENU = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']//li");
+    public static final By LIST_OF_BLOG_LINKS = By.xpath("//div[@class='info-content-block wysiwyg']//ul//li");
 
     //SignIn Tests
     public static final By LINK_SIGN_IN = By.xpath("//a[@href='https://romanceabroad.com/users/login_form']");
@@ -83,11 +84,11 @@ public class Locators {
     public static final By HEADER_GIFT_SIGN = By.cssSelector(".fa.fa-gift.fa-lg");
     public static final By HEADER_TOUR_TO_UKRAINE = By.xpath("//a[text()='Tour to Ukraine']");
     public static final By HEADER_INDIVIDUAL_TRIP_TO_UKRAINE = By.xpath("//a[text()='Individual trip to Ukraine']");
-    public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//img[@src='/application/views/flatty/logo/mini_logo.png']");
+    public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//div[@class='logo-mobile-version top-menu-item']//a[@href='https://romanceabroad.com/']");
     public static final By HEADER_BUTTON_FIND_PEOPLE = By.xpath("//button[@id='main_search_button_user_line']");
     public static final By HEADER_BUTTON_LOGIN = By.cssSelector("#ajax_login_link");
     public static final By HEADER_LIST_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
-    public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//header[@id='main-menu-container'] //i[@class='fa fa-bars fa-lg item']");
+    public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//a[@class='uam-top link-open-menu btn-slide']");
     public static final By HEADER_SIGN_UP_FORM_LINK = By.xpath("//a[@id='user_main-menu-registration-item']");
     public static final By SIGN_UP_USER_EMAIL_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='email']");
     public static final By SIGN_UP_USERNAME_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='nickname']");

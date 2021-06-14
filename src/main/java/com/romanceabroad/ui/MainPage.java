@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +17,16 @@ public class MainPage extends BaseActions {
     public void clickJoinButton() {
         driver.findElement(Locators.BUTTON_REGISTRATION).click();
     }
+
+    public void javaWait(int ms) {
+        System.out.println("Child!!!");
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void completeFirstPartOfRegistration(String email, String password) {
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
@@ -55,9 +67,6 @@ public class MainPage extends BaseActions {
         driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).sendKeys(city);
         clickValueOfLists(Locators.LIST_OF_VALUE_LOCATION, location);
     }
-
-
-
 
     public void clickLinkHomePage() {
         driver.findElement(Locators.LINK_HOME_PAGE).click();

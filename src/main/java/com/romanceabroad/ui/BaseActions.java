@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -197,7 +199,7 @@ public class BaseActions {
 
     public String getAnyTitle() {
 
-        String title = driver.findElement(Locators.H1_TITLE).getText();
+        String title = driver.findElement(Locators.H1_TITLE_OF_PAGE).getText();
         return title;
     }
 

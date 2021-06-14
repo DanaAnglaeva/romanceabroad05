@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -6,7 +8,7 @@ public class GiftTests extends BaseUI {
     String currentUrlGift;
 
     @Test
-    public void testLinkGift() {
+    public void testLinkGiftAssertEqualTestCase1() {
 
         giftPage.clickLinkGift();
         currentUrlGift = driver.getCurrentUrl();
@@ -16,9 +18,9 @@ public class GiftTests extends BaseUI {
     }
 
     @Test    // Homework Lesson 4,8 SendKeys,POM
-    public void testGiftSearchField() {
+    public void testSearchGiftSpaOnFieldTestCase2() {
         giftPage.clickLinkGift();
-        giftPage.clickGiftSearchField();
+        giftPage.findGiftSpa();
         giftPage.clickButtonGiftSearch();
 
     }

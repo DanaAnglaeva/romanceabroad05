@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.testng.annotations.Test;
 
 public class SignInTests extends BaseUI {
@@ -5,21 +7,21 @@ public class SignInTests extends BaseUI {
     String currentSignInForm;
 
     @Test
-    public void SignInPageAssertion() {
+    public void SignInPageAssertionTestCase1() {
         signInPage.clickLinkSignInWebElement();
         currentSignInForm = driver.getCurrentUrl();
         System.out.println(currentSignInForm);
     }
 
     @Test
-    public void FirsSignInWebElementRegistrationForm() {
+    public void FirsSignInWebElementRegistrationFormTestCase2() {
         signInPage.clickLinkSignInWebElement();
         signInPage.completeSignInRegistrationForm();
         signInPage.clickSignInButton();
     }
 
     @Test
-    public void NewUserSignInWebElementRegistrationForm() {
+    public void NewUserSignInWebElementRegistrationFormTestCase3() {
         signInPage.clickLinkSignInWebElement();
         signInPage.completeSignInRegistrationForm();
         signInPage.clickSignInButton();
@@ -27,7 +29,7 @@ public class SignInTests extends BaseUI {
     }
 
     @Test
-    public void SignInWebElementRegistrationWithFacebook() {
+    public void SignInWebElementRegistrationWithFacebookTestCase4() {
         signInPage.clickLinkSignInWebElement();
         signInPage.completeSignInRegistrationForm();
         signInPage.clickSignInButton();
@@ -35,7 +37,7 @@ public class SignInTests extends BaseUI {
     }
 
     @Test
-    public void SignInWebElementRestoreUsersPasword() {
+    public void SignInWebElementRestoreUsersPaswordTestCase5() {
         signInPage.clickLinkSignInWebElement();
         signInPage.completeSignInRegistrationForm();
         signInPage.clickLinkForgotPassword();

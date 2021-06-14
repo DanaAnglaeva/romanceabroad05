@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,8 +13,8 @@ public class GiftPage extends BaseActions {
         driver.findElement(Locators.LINK_GIFT).click();
     }
 
-    public void clickGiftSearchField() {
-        driver.findElement(Locators.GIFT_SEARCH_FIELD).sendKeys(Data.searchGift);
+    public void findGiftSpa() {
+        driver.findElement(Locators.GIFT_SEARCH_FIELD).sendKeys(Data.searchGiftSpa);
     }
 
     public void clickButtonGiftSearch() {

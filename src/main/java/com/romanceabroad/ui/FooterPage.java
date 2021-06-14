@@ -1,8 +1,7 @@
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+package com.romanceabroad.ui;
 
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FooterPage extends BaseActions {
     public FooterPage(WebDriver driver, WebDriverWait wait) {
@@ -21,7 +20,7 @@ public class FooterPage extends BaseActions {
         driver.findElement(Locators.CONTACT_US_USER_EMAIL_FIELD).sendKeys(email);
         driver.findElement(Locators.CONTACT_US_SUBJECT_FIELD).sendKeys(subject);
         driver.findElement(Locators.CONTACT_US_MESSAGE_FIELD).sendKeys(message);
-        //driver.findElement(Locators.CONTACT_US_SEND_FORM).click();
+        //driver.findElement(com.romanceabroad.ui.Locators.CONTACT_US_SEND_FORM).click();
     }
     public void clickFooterSiteMapLinkMenu () {
             driver.findElement(Locators.FOOTER_SITE_MAP_LINK_MENU).click();

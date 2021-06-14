@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,21 +9,21 @@ import java.util.List;
 public class TourTests extends BaseUI {
     String currentUrlTour;
 
-    public static final boolean testCase11 = true;
-    public static final boolean testCase12 = false;
-    public static final boolean testCase13 = true;
+    public static final boolean testCase1 = true;
+    public static final boolean testCase2 = false;
+    public static final boolean testCase3 = true;
 
-    @Test(priority = 2,enabled = testCase12, groups = {"user","admin", "ie"})
-    public void testLinkTourTestCase12() {
+    @Test(priority = 2,enabled = testCase1, groups = {"ie","user","admin", })//Lesson 19,20 tc passed
+    public void testLinkTourTestCase1() {
 
         tourPage.clickLinkTourPage();
         currentUrlTour = driver.getCurrentUrl();
         System.out.println(currentUrlTour);
         Assert.assertEquals(currentUrlTour, Data.expectedUrlTour);
     }
-    @Test (priority = 3,enabled = testCase13, groups = {"user","admin"})
+    @Test (priority = 3,enabled = testCase2, groups = {"user","admin"}) //Lesson 19,20 tc passed
     // Homework: SendKeys
-    public void testSearchTourTestCase13() {
+    public void testSearchTourTestCase2() {
         tourPage.clickLinkTourPage();
         tourPage.clickSearchFieldVipTourToUkraine();
         tourPage.clickButtonTourSearch();
@@ -30,9 +32,10 @@ public class TourTests extends BaseUI {
 //        tourPage.clickButtonPayWithPayPal();
         tourPage.clickLinkTourPage();
     }
-        @Test (priority = 1,enabled = testCase11, groups = {"user","admin", "ie"})
-        //Homework //Lesson12
-        public void testLoopsTestCase11 () {
+
+    @Test (priority = 1,enabled = testCase3, groups = {"user","admin"})
+        //Homework //Lesson12 //tc passed
+        public void testGetLinksSizeLoopsTestCase3 () {
             tourPage.clickLinkTourPage();
             List<WebElement> links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             System.out.println(links.size());
@@ -42,8 +45,6 @@ public class TourTests extends BaseUI {
 
                System.out.println(info);
                links.get(i).click();
-               tourPage.clickLinkTourPage();
-               driver.get(Data.mainUrl);
                links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             }
         }

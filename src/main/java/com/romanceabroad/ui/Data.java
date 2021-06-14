@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 public class Data {
 
     //Registration data
@@ -28,16 +30,16 @@ public class Data {
     public static final String expectedUrlHome = "https://romanceabroad.com/#";
     public static final String expectedHomePageBookNow = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";
     public static final String expectedHomePageJoinToday = "https://romanceabroad.com/#";
-    //HowWeWork Data
+    //HowWeWork com.romanceabroad.ui.Data
     public static final String expectedUrlHowWeWork = "https://romanceabroad.com/content/view/how-it-works";
 
     //Media data
     public static final String expectedUrlMedia = "https://romanceabroad.com/media/index";
     public static final String expectedUrlSearch = "https://romanceabroad.com/users/search";
 
-    //Gifts Data
+    //Gifts com.romanceabroad.ui.Data
     public static final String expectedUrlGift = "https://romanceabroad.com/store/category-sweets";
-    public static final String searchGift = "Spa";
+    public static final String searchGiftSpa = "Spa";
 
     //Tour data
     public static final String expectedUrlTour = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";

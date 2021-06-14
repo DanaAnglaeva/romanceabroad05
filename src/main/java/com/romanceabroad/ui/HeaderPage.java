@@ -1,11 +1,10 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
-    public class HeaderPage extends BaseActions {
+public class HeaderPage extends BaseActions {
         public HeaderPage(WebDriver driver, WebDriverWait wait) {
 
             super(driver, wait);
@@ -46,9 +45,11 @@ import java.util.concurrent.TimeUnit;
         public void clickHeaderLeftDropDownMenu() {
             driver.findElement(Locators.HEADER_LEFT_DROPDOWN_MENU).click();
         }
+
         public void clickSignUpForm() {
             driver.findElement(Locators.HEADER_SIGN_UP_FORM_LINK).click();
         }
+
         public void completeFullSignUpRegistrationForm(String email, String username, String password, String day,
                                               String month, String year, String phone, String city, String location) {
 

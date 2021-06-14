@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,8 +10,8 @@ public class BlogTests extends BaseUI {
 
     String currentUrlBlog;
 
-    @Test //Homework Lesson8 / POM
-    public void BlogTests() {
+    @Test //Homework Lesson8 / Ptc passed
+    public void testBlogAsssertEqualTestCase1() {
 
         blogPage.clickLinkBlog();
         currentUrlBlog = driver.getCurrentUrl();
@@ -17,83 +19,52 @@ public class BlogTests extends BaseUI {
         Assert.assertEquals(currentUrlBlog, Data.expectedUrlBlog);
     }
 
-       @Test    //  Lesson 10//for iteration with BlogPage
-    public void testBlogLoop() {
-
+    @Test   // Homework Lesson 10 //
+    public void testBlogLoopForAllMenuUlListTestCase2() {  //links collected tc passed
         blogPage.clickLinkBlog();
-        List<WebElement> links = driver.findElements(Locators.BLOG_ALL_MENU);
-        System.out.println(links.size());
-
-        for (int i = 0; i < links.size(); i++) {
-            String info = links.get(i).getText();
-
-            System.out.println(info);
-            links.get(i).click();
-            blogPage.clickLinkBlog();
-            driver.get(mainUrl);
-            links = driver.findElements(Locators.BLOG_ALL_MENU);
-        }
-    }
-
-    @Test   // Homework Lesson 10 // did not open links
-    public void testBlogLoopForAllMenuUlList() {  //for iteration with BlogPage
-        blogPage.clickLinkBlog();
-        List<WebElement> links = driver.findElements(Locators.BLOG_TAB_MENU);
+        List<WebElement> links = driver.findElements(Locators.LIST_OF_BLOG_LINKS);
         System.out.println(links.size());
         for (int i = 0; i < links.size(); i++) {
             String info = links.get(i).getText();
             System.out.println(info);
             links.get(i).click();
             blogPage.clickLinkBlog();
-            links = driver.findElements(Locators.BLOG_TAB_MENU);
+            links = driver.findElements(Locators.LIST_OF_BLOG_LINKS);
         }
-    }
-
-    @Test //Web element is displayed//Lesson 9// TC have moved to BlogTests
-    public void testBlogTabDisplayedIfElseFailed() {
-
-        blogPage.clickLinkBlog();
-        WebElement blogTabMenu = driver.findElement(Locators.BLOG_ALL_MENU);
-        if (!blogTabMenu.isDisplayed()) {
-            blogTabMenu.click();
-            System.out.println("This page displayed!");
-        } else {
-            Assert.fail("Not found this page");
-        }
-
     }
 
     @Test  //Lesson 9 If/else//contains text!!!//Homework
-    public void testBlogIsContainsTextIfElsePassed() {
+    public void testBlogIsContainsTextIfElseTestCase3() {
         blogPage.clickLinkBlog();
-        WebElement blogTabMenu = driver.findElement(Locators.BLOG_TAB_MENU);
+        WebElement listOfBlogLinks = driver.findElement(Locators.LIST_OF_BLOG_LINKS);
 
-        if (blogTabMenu.getText().contains("Kiev dating agency")) {
-            blogTabMenu.click();
+        if (listOfBlogLinks.getText().contains("Kharkov dating agency")) {
+            listOfBlogLinks.click();
             System.out.println("This page exist!");
         } else {
             Assert.fail("Not found this page");
 
         }
     }
-    @Test //Web element is displayed //Lesson9/TC have moved to BlogTests
-    public void testBlogTabIsDisplayedIfElsePassed() {
+
+    @Test //Web element is displayed //Lesson9/TC passed
+    public void testBlogTabIsDisplayedIfElseTestCase4() {
 
         blogPage.clickLinkBlog();
-        WebElement blogTabMenu = driver.findElement(Locators.BLOG_TAB_MENU);
-        if (blogTabMenu.isDisplayed()) {
-            blogTabMenu.click();
+        WebElement listOfBlogLinks = driver.findElement(Locators.LIST_OF_BLOG_LINKS);
+        if (listOfBlogLinks.isDisplayed()) {
+            listOfBlogLinks.click();
             System.out.println("This page displayed!");
         } else {
             Assert.fail("Not found this page");
         }
     }
 
-    @Test  //Lesson 9 If/else //Homework//Test have moved to BlogTests
+    @Test  //Lesson 9 If/else //Homework//Test passed
 
-    public void testBlogGetTextIfElseFailed() {
+    public void testBlogGetTextIfElseFailedTestCase5() {
         blogPage.clickLinkBlog();
-        WebElement blogTabMenu = driver.findElement(Locators.BLOG_TAB_MENU);
+        WebElement blogTabMenu = driver.findElement(Locators.LIST_OF_BLOG_LINKS);
 
         if (!blogTabMenu.getText().contains("Kiev dating agency")) {
             blogTabMenu.click();
@@ -102,11 +73,11 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 9 // Homework //TC have moved to BlogTests
-    public void testBlogIfElseForAllLinksPassed() {
+    @Test //Lesson 9 // Homework //TC passed
+    public void testBlogIfElseForAllLinksTestCase6() {
 
         blogPage.clickLinkBlog();
-        WebElement blogTabMenu = driver.findElement(Locators.BLOG_TAB_MENU);
+        WebElement blogTabMenu = driver.findElement(Locators.PAGES_CONTENT_LIST_OF_ALL_LINKS);
 
         if (blogTabMenu.getText().contains("Kharkov dating agency")) {
             blogTabMenu.click();

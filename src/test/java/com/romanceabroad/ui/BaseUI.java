@@ -1,3 +1,5 @@
+package com.romanceabroad.ui;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -37,7 +39,7 @@ public class BaseUI<alwaysRun> {
         // Check if parameter passed from TestNG is 'firefox'
         if (browser.equalsIgnoreCase("firefox")) {
             // Create firefox instance
-            System.setProperty("webdriver.gecko.driver", "geckodriverOld.exe");
+            System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
             driver = new FirefoxDriver();
         }
         // Check if parameter passed as 'chrome'
@@ -47,17 +49,19 @@ public class BaseUI<alwaysRun> {
             // Create chrome instance
             driver = new ChromeDriver();
             driver.get("chrome://settings/clearBrowserData");
+
         } else if (browser.equalsIgnoreCase("IE")) {
-            System.setProperty("webdriver.ie.driver", "IEDriverServerOld.exe");
+            System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
             driver = new InternetExplorerDriver();
             driver.manage().deleteAllCookies();
+
         } else {
             System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             driver = new ChromeDriver();
             driver.get("chrome://settings/clearBrowserData");
         }
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
+   //     driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 20);
         mainPage = new MainPage(driver, wait);
         searchPage = new SearchPage(driver, wait);
         blogPage = new BlogPage(driver, wait);
