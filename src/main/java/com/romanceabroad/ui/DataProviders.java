@@ -48,12 +48,12 @@ public class DataProviders {
     }
 
     @DataProvider(name = "Search")
-    public static Object[][] testSearchFeaturetestCase7() {
+    public static Object[][] searchDifferentResultsTestCase15() {
         return new Object[][]{
                 {"18", "80", "Default"},
-                {"23", "35", "Name"},
-                {"31", "53", "Views"},
-                {"42", "51", "Registration date"},
+//                {"23", "35", "Name"},
+//                {"31", "53", "Views"},
+//                {"42", "51", "Registration date"},
        };
     }
 

@@ -17,7 +17,6 @@ public class SignInPage extends BaseActions {
         driver.findElements(Locators.LINK_SIGN_IN).get(indexLinkSignIn).click();
     }
 
-
     public void completeSignInRegistrationForm() {
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         driver.findElement(Locators.SIGN_IN_EMAIL_FIELD).sendKeys("tester123@gmail.com");

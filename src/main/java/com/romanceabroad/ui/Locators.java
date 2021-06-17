@@ -46,6 +46,7 @@ public class Locators {
     public static final By DROP_DOWN_LIST_MIN_USER_AGE = By.cssSelector("#age_min");
     public static final By DROP_DOWN_LIST_MAX_USER_AGE = By.xpath("//div[@class='col-xs-5 no-padding-right']//select");
     public static final By BUTTON_SEARCH = By.cssSelector("#main_search_button_user_advanced");
+    public static final By USERS_DISPLAYED_INFO = By.xpath("//div[@class='text-overflow']");
 
     //Media Tests
     public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");

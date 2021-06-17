@@ -126,7 +126,6 @@ public class RegistrationTests<fori> extends BaseUI {
                 System.out.println("Checkbox is not selected. Terms and conditions link is opened.");
             }
         }
-
         //Lesson 19 Homework//TC passed
         @Test(dataProvider = "Registration2", dataProviderClass = DataProviders.class)
         public void testRegistration9(String email,String nickname, boolean requirement) {

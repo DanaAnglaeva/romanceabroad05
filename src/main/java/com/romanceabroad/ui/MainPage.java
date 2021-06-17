@@ -65,6 +65,8 @@ public class MainPage extends BaseActions {
 
         driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).clear();
         driver.findElement(Locators.AUTOFILLING_FORM_LOCATION).sendKeys(city);
+
+        driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         clickValueOfLists(Locators.LIST_OF_VALUE_LOCATION, location);
     }
 

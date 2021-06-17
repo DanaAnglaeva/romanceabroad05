@@ -2,7 +2,6 @@ package com.romanceabroad.ui;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -200,35 +199,43 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test
+    @Test// Lesson22
             (dataProvider = "Search", dataProviderClass = DataProviders.class, priority = 3, enabled = testCase15,
                     groups = {"user", "admin"}
     )
     public void searchDifferentResultsTestCase15(String minAge, String maxAge, String sortBy) {
-        int min = Integer.parseInt(maxAge);
+        int min = Integer.parseInt(minAge);
         int max = Integer.parseInt(maxAge);
+        System.out.println(min);
+        System.out.println(max);
 
         searchPage.clickLinkSearch();
-        searchPage.getDropDownListByText(driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE),minAge);
+        searchPage.getDropDownListByText(driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE), minAge);
         searchPage.getDropDownListByText(driver.findElement(Locators.DROP_DOWN_LIST_MAX_USER_AGE), maxAge);
+        searchPage.getDropDownListByText(driver.findElement(Locators.DROP_DOWN_LIST_SORT_BY), sortBy);
+        searchPage.clickButtonSearch();
 
-        List<WebElement>infoAboutUser = driver.findElements(By.xpath("//div[@class='text-overflow']"));
-        System.out.println(infoAboutUser.size());
+        List<WebElement> infoAboutUser = driver.findElements(Locators.USERS_DISPLAYED_INFO);
+
         for (int i = 0; i < infoAboutUser.size(); i++) {
+            if (i % 2 == 0) {
+                WebElement text = infoAboutUser.get(i);
+                String info = text.getText();
+                System.out.println(info);
+            }
+               // mainPage.javaWait(3);
+                infoAboutUser = driver.findElements(Locators.USERS_DISPLAYED_INFO);
 
-            WebElement text = infoAboutUser.get(i);
-            wait.until(ExpectedConditions.visibilityOf(text));
-            String info = text.getText();
-            System.out.println(info);
-            infoAboutUser = driver.findElements(By.xpath("//div[@class='text-overflow']"));
         }
     }
 
-    @Test //Lesson 14 //tc passed
-    public void testCheckAllLinksAndImgagesTestCase16() {
-        searchPage.clickLinkSearch();
-        searchPage.checkLinksOnWebPage("//a", "href");
-        searchPage.checkLinksOnWebPage("//li", "href");
+            @Test //Lesson 14 //tc passed
+            public void testCheckAllLinksAndImgagesTestCase16 () {
+                //                } else {
+//                    Assert.fail("Wrong age:" + ageNum);
+                searchPage.clickLinkSearch();
+                searchPage.checkLinksOnWebPage("//a", "href");
+                searchPage.checkLinksOnWebPage("//li", "href");
 
     }
 }
