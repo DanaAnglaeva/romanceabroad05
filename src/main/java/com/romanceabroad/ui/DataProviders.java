@@ -51,10 +51,9 @@ public class DataProviders {
     public static Object[][] searchDifferentResultsTestCase15() {
         return new Object[][]{
                 {"18", "80", "Default"},
-//                {"23", "35", "Name"},
-//                {"31", "53", "Views"},
-//                {"42", "51", "Registration date"},
+                {"18", "25", "Name"},
+                {"31", "53", "Views"},
+                {"42", "51", "Registration date"},
        };
     }
-
 }

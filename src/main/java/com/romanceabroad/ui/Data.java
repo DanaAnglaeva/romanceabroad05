@@ -30,11 +30,14 @@ public class Data {
     public static final String expectedUrlHome = "https://romanceabroad.com/#";
     public static final String expectedHomePageBookNow = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";
     public static final String expectedHomePageJoinToday = "https://romanceabroad.com/#";
+
     //HowWeWork com.romanceabroad.ui.Data
     public static final String expectedUrlHowWeWork = "https://romanceabroad.com/content/view/how-it-works";
 
     //Media data
     public static final String expectedUrlMedia = "https://romanceabroad.com/media/index";
+
+    //Search data
     public static final String expectedUrlSearch = "https://romanceabroad.com/users/search";
 
     //Gifts com.romanceabroad.ui.Data
@@ -48,6 +51,12 @@ public class Data {
     //Blog data
     public static final String expectedUrlBlog = "https://romanceabroad.com/content/view/blog";
 
+    //User profile
 
+    public static final String expectedTitleAllPhotos = "Ukrainian women photos";
+    public static final String expectedTitleGallery = "Gallery";
+    public static final String expectedTitlePhotoGallery = "Photo gallery";
+    public static final String expectedTitleVideoGallery = "Video gallery";
+    public static final String expectedTitleGalleryAlbums = "Gallery albums";
 
 }

@@ -48,8 +48,9 @@ public class Locators {
     public static final By BUTTON_SEARCH = By.cssSelector("#main_search_button_user_advanced");
     public static final By USERS_DISPLAYED_INFO = By.xpath("//div[@class='text-overflow']");
 
-    //Media Tests
+    //Media/Photo Tests
     public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");
+    public static final By LINK_TAB_USER_PROFILE = By.xpath("//ul[@id='gallery_filters']//a");
 
     //Gift Tests
     public static final By LINK_GIFT = By.xpath("//a[@href='https://romanceabroad.com/store/category-sweets']");

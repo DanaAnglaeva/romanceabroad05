@@ -28,6 +28,7 @@ public class BaseUI<alwaysRun> {
     TourPage tourPage;
     HeaderPage headerPage;
     FooterPage footerPage;
+    PhotosPage photosPage;
     SoftAssert softAssert = new SoftAssert();
 
     @BeforeMethod (groups = {"user", "admin","ie"}, alwaysRun = true)
@@ -72,6 +73,7 @@ public class BaseUI<alwaysRun> {
         tourPage = new TourPage(driver, wait);
         headerPage = new HeaderPage(driver,wait);
         footerPage = new FooterPage(driver,wait);
+        photosPage = new PhotosPage(driver,wait);
 
         driver.manage().window().maximize();
         driver.get(mainUrl);

@@ -221,9 +221,17 @@ public class SearchTests extends BaseUI {
             if (i % 2 == 0) {
                 WebElement text = infoAboutUser.get(i);
                 String info = text.getText();
-                System.out.println(info);
+                String [] splitedPhrase = info.split(",");
+                String age = splitedPhrase [1];
+                int ageNum = Integer.parseInt(age);
+
+                if (min <= ageNum || ageNum <= max) {
+                    System.out.println("This age: " + ageNum + " is correct");
+                } else {
+                    Assert.fail("Wrong age: " + ageNum);
+                }
             }
-               // mainPage.javaWait(3);
+                mainPage.javaWait(3);
                 infoAboutUser = driver.findElements(Locators.USERS_DISPLAYED_INFO);
 
         }
