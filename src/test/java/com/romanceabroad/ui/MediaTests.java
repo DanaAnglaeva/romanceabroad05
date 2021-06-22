@@ -14,7 +14,6 @@ public class MediaTests extends BaseUI {
     public void testGetLinkMediaAssertEqualTestCase1() {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_MEDIA));
         mediaPage.clickLinkMedia();
-       // mediaPage.javaWaitSec(5);
         currentUrlMedia = driver.getCurrentUrl();
         System.out.println(currentUrlMedia);
         Assert.assertEquals(currentUrlMedia, Data.expectedUrlMedia);

@@ -2,6 +2,7 @@ package com.romanceabroad.ui;
 
 import org.testng.annotations.DataProvider;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class DataProviders {
     @DataProvider(name = "Registration2")
     public static Object[][] testRegistration2() {
         return new Object[][]{
-                {Data.email_gmail,Data.generated_nickname, true},
+                {Data.email_gmail, Data.generated_nickname, true},
                 {Data.invalid_email_yahoo, Data.generated_nickname, false},
                 {Data.email_hotmail, Data.generated_nickname, true},
         };
@@ -54,6 +55,16 @@ public class DataProviders {
                 {"18", "25", "Name"},
                 {"31", "53", "Views"},
                 {"42", "51", "Registration date"},
-       };
+        };
+    }
+
+    @DataProvider(name = "Registration3") //Lesson25
+    public static Object[][] testRegistration3() throws IOException {
+        ArrayList<Object[]> out = new ArrayList<>();
+        Files.readAllLines(Paths.get("Registration3.csv")).stream().forEach(s -> {
+            String[] data = s.split(",");
+            out.add(new Object[]{data[0], data[1], false});
+        });
+        return out.toArray(new Object[out.size()][]);
     }
 }

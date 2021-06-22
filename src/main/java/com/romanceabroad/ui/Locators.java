@@ -13,6 +13,9 @@ public class Locators {
     public static final By TEXT_FIELD_NICKNAME = By.cssSelector("#nickname");
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
 
+
+
+
     public static final By LIST_OF_DAYS = By.cssSelector("#daySelect");
     public static final By LIST_OF_MONTHS = By.cssSelector("#monthSelect");
     public static final By LIST_OF_YEARS = By.cssSelector("#yearSelect");
@@ -56,6 +59,9 @@ public class Locators {
     public static final By LINK_GIFT = By.xpath("//a[@href='https://romanceabroad.com/store/category-sweets']");
     public static final By GIFT_SEARCH_FIELD = By.xpath("//input[@name='search_product']");
     public static final By BUTTON_GIFT_SEARCH = By.xpath("//button[@id ='search_friend']");
+    public static final By LIST_RELATED_ITEMS = By.xpath("//ul[@class='user-gallery']/li");
+    public static final By FLOWER_BASKET_GIFT = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/12-flower_basket']");
+    public static final By GIFTS_BESTSELLERS = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-12 col-lg-12']//a");
 
     //Tour Tests
     public static final By LINK_TOUR = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");

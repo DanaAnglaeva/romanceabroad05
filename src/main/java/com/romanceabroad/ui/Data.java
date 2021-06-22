@@ -36,6 +36,7 @@ public class Data {
 
     //Media data
     public static final String expectedUrlMedia = "https://romanceabroad.com/media/index";
+    public static final String textMedia = "On our website you have access to photos of all different kinds of women";
 
     //Search data
     public static final String expectedUrlSearch = "https://romanceabroad.com/users/search";
@@ -43,6 +44,17 @@ public class Data {
     //Gifts com.romanceabroad.ui.Data
     public static final String expectedUrlGift = "https://romanceabroad.com/store/category-sweets";
     public static final String searchGiftSpa = "Spa";
+
+    public static final String expectedTitleGifts = "Gifts";
+    public static final String expectedTitleRelatedItems = "Related items";
+    public static final String expectedTitleGiftSpa = "Spa";
+    public static final String expectedTitleGiftChocolateAndFruits = "Chocolate and Fruits";
+    public static final String expectedTitleGiftTeddyBear = "Teddy bear";
+    public static final String expectedTitleGiftSushiSets = "Sushi sets";
+    public static final String expectedTitleGiftToursToUkraine = "TOURS TO UKRAINE";
+    public static final String expectedTitleGiftFlowerBasket = "Flower basket";
+    public static final String expectedTitleGiftVipToutToUkraine = "VIP individual tour to Ukraine";
+
 
     //Tour data
     public static final String expectedUrlTour = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";

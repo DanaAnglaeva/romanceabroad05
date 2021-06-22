@@ -38,11 +38,11 @@
     </groups>
     <classes>
 
-       <class name="com.romanceabroad.ui.TourTests">
+       <class name="com.romanceabroad.ui.RegistrationTests">
               <methods>
-                 <include name=".*TestCase1.*"/>
-                 <include name=".*TestCase2.*"/>
-                 <include name=".*TestCase3.*"/>
+                 <include name=".*TestCase7.*"/>
+<!--                 <include name=".*TestCase2.*"/>-->
+<!--                 <include name=".*TestCase3.*"/>-->
 
               </methods>
     </class>

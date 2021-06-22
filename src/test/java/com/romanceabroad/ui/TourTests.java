@@ -44,7 +44,6 @@ public class TourTests extends BaseUI {
                 String info = links.get(i).getText();
 
                System.out.println(info);
-
                links.get(i).click();
                links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             }
