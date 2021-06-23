@@ -13,7 +13,8 @@ public class TourTests extends BaseUI {
     public static final boolean testCase2 = false;
     public static final boolean testCase3 = true;
 
-    @Test(priority = 2,enabled = testCase1, groups = {"ie","user","admin", })//Lesson 19,20 tc passed
+    @Test(priority = 2,enabled = testCase1, groups = {"ie","user","admin", })
+
     public void testLinkTourTestCase1() {
 
         tourPage.clickLinkTourPage();
@@ -21,21 +22,20 @@ public class TourTests extends BaseUI {
         System.out.println(currentUrlTour);
         Assert.assertEquals(currentUrlTour, Data.expectedUrlTour);
     }
-    @Test (priority = 3,enabled = testCase2, groups = {"user","admin"}) //Lesson 19,20 tc passed
-    // Homework: SendKeys
-    public void testSearchTourTestCase2() {
+    @Test (priority = 3,enabled = testCase2, groups = {"user","admin"})
+
+     public void testSearchTourTestCase2() {
         tourPage.clickLinkTourPage();
         tourPage.clickSearchFieldVipTourToUkraine();
         tourPage.clickButtonTourSearch();
         tourPage.clickButtonQuickView();
         tourPage.clickLinkTourPage();
-//        tourPage.clickButtonPayWithPayPal();
-        tourPage.clickLinkTourPage();
+         tourPage.clickLinkTourPage();
     }
 
     @Test (priority = 1,enabled = testCase3, groups = {"user","admin"})
-        //Homework //Lesson12 //tc passed
-        public void testGetLinksSizeLoopsTestCase3 () {
+
+         public void testGetLinksSizeLoopsTestCase3 () {
             tourPage.clickLinkTourPage();
             List<WebElement> links = driver.findElements(Locators.TOUR_GALLERY_WITH_GIFTS);
             System.out.println(links.size());

@@ -1,24 +1,22 @@
 package com.romanceabroad.ui;
 
-import net.bytebuddy.jar.asm.ClassReader;
-import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegistrationTests<fori> extends BaseUI {
 
-    public static final boolean testCase1 = false;
+    public static final boolean testCase1 = true;
     public static final boolean testCase2 = false;
-    public static final boolean testCase3 = false;
+    public static final boolean testCase3 = true;
     public static final boolean testCase4 = false;
-    public static final boolean testCase5 = false;
+    public static final boolean testCase5 = true;
     public static final boolean testCase6 = false;
     public static final boolean testCase7 = true;
 
     @Test(priority = 1, enabled = testCase1, groups = {"user", "admin"})
-    //Lesson 16//tc passed
-    public void testRegistrationTestCase1() {
+     public void testRegistrationTestCase1() {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_REGISTRATION));
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
@@ -28,7 +26,7 @@ public class RegistrationTests<fori> extends BaseUI {
                 Data.day, Data.month, Data.year, Data.city, Data.location);
     }
 
-    @Test(priority = 1, enabled = testCase2, groups = {"user", "admin"}) //Lesson9,16 // tc passed
+    @Test(priority = 1, enabled = testCase2, groups = {"user", "admin"})
     public void testCheckboxConfirmationTestIfSelectedTestCase2() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
@@ -42,7 +40,6 @@ public class RegistrationTests<fori> extends BaseUI {
     }
 
     @Test(priority = 2, enabled = testCase3, groups = {"user", "admin", "ie"})
-    //  Lesson 9,16 //Homework //   If/Else tc passed
 
     public void testWebElementIfCheckboxIsSelectedTestCase3() {
         mainPage.clickJoinButton();
@@ -57,7 +54,7 @@ public class RegistrationTests<fori> extends BaseUI {
         }
     }
 
-    @Test(priority = 3, enabled = testCase4, groups = {"user", "admin", "ie"})//  Lesson 10,16 Assertions tc passed
+    @Test(priority = 3, enabled = testCase4, groups = {"user", "admin", "ie"})
 
     public void testWebElementIfCheckboxIsNotSelectedAssertFailTestCase4() {
         mainPage.clickJoinButton();
@@ -65,8 +62,7 @@ public class RegistrationTests<fori> extends BaseUI {
         mainPage.clickNextButton();
         mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5),
                 Data.phone, Data.day, Data.month, Data.year, Data.city, Data.location);
-//        mainPage.clickCheckboxConfirmation();
-        WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
+         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX_CONFIRMATION_BUTTON);
         if (checkboxConfirmation.isSelected()) {
             checkboxConfirmation.click();
         } else {
@@ -75,15 +71,13 @@ public class RegistrationTests<fori> extends BaseUI {
     }
 
     @Test(priority = 3, enabled = testCase5, groups = {"user", "admin", "ie"})
-    // tc passed//  Lesson 10,16 Assertions
-    public void testWebElementAssertTrueTestCase5() {
+     public void testWebElementAssertTrueTestCase5() {
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
         mainPage.clickNextButton();
         mainPage.completeSecondPartOfRegistration(mainPage.generateNewNumber(Data.nickname, 5),
                 Data.phone, Data.day, Data.month, Data.year, Data.city, Data.location);
-//            mainPage.clickCheckboxConfirmation();
-        WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
+         WebElement checkboxConfirmation = driver.findElement((Locators.CHECKBOX_CONFIRMATION_BUTTON));
         if (!driver.findElement(Locators.LINK_SEARCH).isSelected()) {
             checkboxConfirmation.click();
         } else {
@@ -91,8 +85,7 @@ public class RegistrationTests<fori> extends BaseUI {
         }
     }
 
-    //Lesson 19 Homework//tc passed
-    @Test(dataProvider = "Registration", dataProviderClass = DataProviders.class)
+     @Test(dataProvider = "Registration", dataProviderClass = DataProviders.class)
     public void testRegistrationTestCase6(String email, String password, String day, String month, String year,
                                           String phone, String city, String location) {
 
@@ -103,16 +96,14 @@ public class RegistrationTests<fori> extends BaseUI {
                 month, day, year, city, location);
     }
 
-    //Lesson 19 Homework//tc passed
-    @Test(dataProvider = "RegistrationContactUs", dataProviderClass = DataProviders.class)
+     @Test(dataProvider = "RegistrationContactUs", dataProviderClass = DataProviders.class)
     public void testContactUsTestCase7(String name, String email, String subject, String message) {
         searchPage.clickLinkSearch();
         searchPage.ajaxClick(Locators.FOOTER_TAB, 0);
         footerPage.completeContactUsForm(name, email, subject, message);
     }
 
-    //Lesson 19 Homework//tc passed
-    @Test(dataProvider = "SignUpUserRegistrationForm", dataProviderClass = DataProviders.class)
+     @Test(dataProvider = "SignUpUserRegistrationForm", dataProviderClass = DataProviders.class)
     public void signUpUserRegistrationFormTestCase8(String email, String username, String password, String day, String month,
                                                     String year, String phone, String city, String location) {
         howWeWorkPage.clickLinkHowWeWork();
@@ -130,8 +121,7 @@ public class RegistrationTests<fori> extends BaseUI {
         }
     }
 
-    //Lesson 19 Homework//TC passed
-    @Test(dataProvider = "Registration2", dataProviderClass = DataProviders.class)
+     @Test(dataProvider = "Registration2", dataProviderClass = DataProviders.class)
     public void testRegistration9(String email, String nickname, boolean requirement) {
         System.out.println(email);
 
@@ -147,8 +137,8 @@ public class RegistrationTests<fori> extends BaseUI {
                     Data.month, Data.day, Data.year, Data.city, Data.location);
         }
     }
-            //Lesson 25 Negative TC for Registration
-    @Test(priority = 3, enabled = testCase7, groups = {"user", "admin"},
+
+     @Test(priority = 3, enabled = testCase7, groups = {"user", "admin"},
             dataProvider = "Registration3", dataProviderClass = DataProviders.class)
     public void testRegistrationNegativeTestCase7(String email, String password, boolean requirement) {
 

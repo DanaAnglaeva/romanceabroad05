@@ -15,8 +15,7 @@ public class SearchTests extends BaseUI {
 
 
     @Test
-    //homework Lesson7 Dropdown list + try catch//tc passed
-    public void testLinkSearchAssertEqualTestCase1() {
+     public void testLinkSearchAssertEqualTestCase1() {
 
         searchPage.clickLinkSearch();
         currentUrlSearch = driver.getCurrentUrl();
@@ -42,8 +41,7 @@ public class SearchTests extends BaseUI {
     }
 
     @Test
-    //homework Lesson 7/DropDown List
-    public void testGetDropDownListFromAge_18_To_80_TestCase2() {
+     public void testGetDropDownListFromAge_18_To_80_TestCase2() {
         searchPage.clickLinkSearch();
         WebElement dropDownListSortByMinAge = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
         searchPage.getDropDownListByIndex(dropDownListSortByMinAge, 0);
@@ -65,8 +63,7 @@ public class SearchTests extends BaseUI {
     }
 
     @Test
-    //homework Lesson 7. Dropdown list + Explicit wait //tc passed
-    public void testGetDropDownListSearchByAllIndexTestCase4() {
+     public void testGetDropDownListSearchByAllIndexTestCase4() {
         searchPage.clickLinkSearch();
         WebElement dropDownListSortBy = driver.findElement(Locators.DROP_DOWN_LIST_SORT_BY);
         searchPage.getDropDownListByIndex(dropDownListSortBy, 0);
@@ -83,7 +80,7 @@ public class SearchTests extends BaseUI {
         System.out.println("Success! Index 3 selected!");
     }
 
-    @Test //tc passed
+    @Test
     public void testGetListSearchByIndexFromAge20To54TestCase5() {
         searchPage.clickLinkSearch();
         WebElement dropDownListMinAge = driver.findElement(Locators.DROP_DOWN_LIST_MIN_USER_AGE);
@@ -94,7 +91,7 @@ public class SearchTests extends BaseUI {
         searchPage.clickButtonSearch();
     }
 
-    @Test //Lesson 9 tc passed
+    @Test
 
     public void testGetWebEleByTextPrettyWomenTestCase6() {
         WebElement tabSearch = driver.findElement((Locators.LINK_SEARCH));
@@ -105,7 +102,7 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 10 tc passed
+    @Test
     public void clickWebElementIsDisplayedTestCase7() {
         WebElement tabSearch = driver.findElement((Locators.LINK_SEARCH));
         if (tabSearch.isDisplayed()) {
@@ -115,9 +112,8 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 10 Soft Assertion //tc passed
-//if we change data, we can see how it work when tc is failed
-    public void testGetDropDownListByTextTestCase10() {
+    @Test
+     public void testGetDropDownListByTextTestCase10() {
         Assert.assertTrue(driver.findElement(Locators.LINK_SEARCH).isDisplayed(), "Element is not displayed");
         driver.findElement(Locators.LINK_SEARCH).click();
         currentUrlSearch = driver.getCurrentUrl();
@@ -128,7 +124,7 @@ public class SearchTests extends BaseUI {
         softAssert.assertAll();
 
     }
-    @Test //Lesson 14 //tc passed
+    @Test
     public void testSelectRandomDropDownListTestCase11() {
 
         driver.findElement(Locators.LINK_SEARCH).click();
@@ -139,7 +135,7 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 14//tc passed
+    @Test
     public void SelectRandomDropDownListMaxAgeTestCase12() {
         driver.findElement(Locators.LINK_SEARCH).click();
 
@@ -150,7 +146,8 @@ public class SearchTests extends BaseUI {
             mainPage.javaWaitSec(3);
         }
     }
-    @Test //Lesson 14////tc passed
+
+    @Test
     public void SelectRandomDropDownListMinAgeTestCase13() {
         driver.findElement(Locators.LINK_SEARCH).click();
 
@@ -162,7 +159,7 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 11,12 /Homework
+    @Test
     public void testGetAllLinksTestCase14() {
         String actualTitle;
         String actualUrlPrettyWomen;
@@ -199,7 +196,7 @@ public class SearchTests extends BaseUI {
         }
     }
 
-    @Test// Lesson22
+    @Test
             (dataProvider = "Search", dataProviderClass = DataProviders.class, priority = 3, enabled = testCase15,
                     groups = {"user", "admin"}
     )
@@ -237,11 +234,9 @@ public class SearchTests extends BaseUI {
         }
     }
 
-            @Test //Lesson 14 //tc passed
-            public void testCheckAllLinksAndImgagesTestCase16 () {
-                //                } else {
-//                    Assert.fail("Wrong age:" + ageNum);
-                searchPage.clickLinkSearch();
+            @Test
+            public void testCheckAllLinksAndImagesTestCase16 () {
+                 searchPage.clickLinkSearch();
                 searchPage.checkLinksOnWebPage("//a", "href");
                 searchPage.checkLinksOnWebPage("//li", "href");
 

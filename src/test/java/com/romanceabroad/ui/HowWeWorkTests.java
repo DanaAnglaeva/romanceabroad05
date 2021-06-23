@@ -10,16 +10,16 @@ public class HowWeWorkTests extends BaseUI {
 
     String currentUrlHowWeWork;
 
-    @Test //use boolean for homework 30min move mouse action and drop down select to Base class; tc passed
+    @Test
 
-    public void testHowWeWorkPageAssertEgualTestCase1() {
+    public void testHowWeWorkPageAssertEqualTestCase1() {
         howWeWorkPage.clickLinkHowWeWork();
         currentUrlHowWeWork = driver.getCurrentUrl();
         System.out.println(currentUrlHowWeWork);
         Assert.assertEquals(currentUrlHowWeWork, Data.expectedUrlHowWeWork);
     }
 
-    @Test    //  Lesson 10//for iteration with com.romanceabroad.ui.BlogPage
+    @Test
         public void testGetAllLinksByLoopTestCase2() {
 
             howWeWorkPage.clickLinkHowWeWork();

@@ -1,7 +1,6 @@
 package com.romanceabroad.ui;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +11,7 @@ public class PhotoTests extends BaseUI {
     String actualTitle;
 
     @Test
-    public void testMediaTab() {
+    public void testPhotoTabTestCase1() {
 
         photosPage.clickLinkMedia();
         List<WebElement> userTabs = driver.findElements(Locators.LINK_TAB_USER_PROFILE);
@@ -37,7 +36,7 @@ public class PhotoTests extends BaseUI {
     }
 
     @Test
-    public void testMediaLinks() {
+    public void testMediaLinksTestCase2() {
 
         photosPage.clickLinkMedia();
         List<WebElement> userTabs = driver.findElements(Locators.LINK_TAB_USER_PROFILE);
@@ -53,7 +52,7 @@ public class PhotoTests extends BaseUI {
                 Assert.assertEquals(actualTitle, Data.expectedTitlePhotoGallery);
             } else if (i == 2) {
                 Assert.assertEquals(actualTitle, Data.expectedTitleVideoGallery);
-                String textMedia = driver.findElement(By.xpath("//div[@class='g-flatty-block']")).getText();
+                String textMedia = driver.findElement(Locators.MEDIA_BLOCK).getText();
                 System.out.println(Data.textMedia);
                 if (textMedia.contains(Data.textMedia)) {
                     System.out.println("Text media is correct!");
@@ -61,7 +60,7 @@ public class PhotoTests extends BaseUI {
             } else if (i == 3) {
                 Assert.assertEquals(actualTitle, Data.expectedTitleGalleryAlbums);
                 mainPage.javaWait(2);
-                Assert.assertTrue(driver.findElement(By.xpath("//div[@class='col-xs-12 content-block']")).isDisplayed());
+                Assert.assertTrue(driver.findElement(Locators.MEDIA_BLOCK).isDisplayed());
             }
                 userTabs = driver.findElements(Locators.LINK_TAB_USER_PROFILE);
 

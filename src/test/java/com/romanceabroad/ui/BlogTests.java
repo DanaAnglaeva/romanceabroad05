@@ -10,8 +10,8 @@ public class BlogTests extends BaseUI {
 
     String currentUrlBlog;
 
-    @Test //Homework Lesson8 / Ptc passed
-    public void testBlogAsssertEqualTestCase1() {
+    @Test
+    public void testBlogAssertEqualTestCase1() {
 
         blogPage.clickLinkBlog();
         currentUrlBlog = driver.getCurrentUrl();
@@ -19,8 +19,8 @@ public class BlogTests extends BaseUI {
         Assert.assertEquals(currentUrlBlog, Data.expectedUrlBlog);
     }
 
-    @Test   // Homework Lesson 10 //
-    public void testBlogLoopForAllMenuUlListTestCase2() {  //links collected tc passed
+    @Test
+    public void testBlogLoopForAllMenuUlListTestCase2() {
         blogPage.clickLinkBlog();
         List<WebElement> links = driver.findElements(Locators.LIST_OF_BLOG_LINKS);
         System.out.println(links.size());
@@ -33,7 +33,7 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test  //Lesson 9 If/else//contains text!!!//Homework
+    @Test
     public void testBlogIsContainsTextIfElseTestCase3() {
         blogPage.clickLinkBlog();
         WebElement listOfBlogLinks = driver.findElement(Locators.LIST_OF_BLOG_LINKS);
@@ -47,7 +47,7 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test //Web element is displayed //Lesson9/TC passed
+    @Test
     public void testBlogTabIsDisplayedIfElseTestCase4() {
 
         blogPage.clickLinkBlog();
@@ -60,7 +60,7 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test  //Lesson 9 If/else //Homework//Test passed
+    @Test
 
     public void testBlogGetTextIfElseFailedTestCase5() {
         blogPage.clickLinkBlog();
@@ -73,7 +73,7 @@ public class BlogTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 9 // Homework //TC passed
+    @Test
     public void testBlogIfElseForAllLinksTestCase6() {
 
         blogPage.clickLinkBlog();
@@ -95,7 +95,7 @@ public class BlogTests extends BaseUI {
             blogTabMenu.click();
             System.out.println("This page exist!");
         }
-        if (blogTabMenu.getText().contains("Beautiful urkainian girls")) {
+        if (blogTabMenu.getText().contains("Beautiful Ukrainian girls")) {
             blogTabMenu.click();
             System.out.println("This page exist!");
         }

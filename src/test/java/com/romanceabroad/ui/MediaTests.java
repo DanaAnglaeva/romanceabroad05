@@ -9,7 +9,7 @@ public class MediaTests extends BaseUI {
 
     String currentUrlMedia;
 
-       @Test //tc passed
+       @Test
 
     public void testGetLinkMediaAssertEqualTestCase1() {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_MEDIA));

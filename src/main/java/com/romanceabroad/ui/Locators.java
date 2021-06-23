@@ -14,8 +14,6 @@ public class Locators {
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
 
 
-
-
     public static final By LIST_OF_DAYS = By.cssSelector("#daySelect");
     public static final By LIST_OF_MONTHS = By.cssSelector("#monthSelect");
     public static final By LIST_OF_YEARS = By.cssSelector("#yearSelect");
@@ -54,6 +52,7 @@ public class Locators {
     //Media/Photo Tests
     public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");
     public static final By LINK_TAB_USER_PROFILE = By.xpath("//ul[@id='gallery_filters']//a");
+    public static final By MEDIA_BLOCK = By.xpath("//div[@class='g-flatty-block']");
 
     //Gift Tests
     public static final By LINK_GIFT = By.xpath("//a[@href='https://romanceabroad.com/store/category-sweets']");
@@ -87,6 +86,9 @@ public class Locators {
     public static final By RESTORE_PASSWORD_BUTTON_SAVE = By.xpath("//input[@type='submit']");
 
     //Header Tests
+    public static final By HEADER_ALL_LINKS = By.xpath("//header[@id='main-menu-container']//a");
+    public static final By LIST_OF_HEADER_LINKS = By.xpath("//header//a");
+
     public static final By HEADER_DROPDOWN_BUTTON = By.xpath("//header[@id='main-menu-container']//i[@class='fa fa-bars fa-lg item']");
     public static final By HEADER_DROP_DOWN_MENU_CLOSE_SIGN = By.cssSelector(".fa.fa-times.close_left_menu");
     public static final By HEADER_GIFT_SIGN = By.cssSelector(".fa.fa-gift.fa-lg");
@@ -98,6 +100,7 @@ public class Locators {
     public static final By HEADER_LIST_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
     public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//a[@class='uam-top link-open-menu btn-slide']");
     public static final By HEADER_SIGN_UP_FORM_LINK = By.xpath("//a[@id='user_main-menu-registration-item']");
+
     public static final By SIGN_UP_USER_EMAIL_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='email']");
     public static final By SIGN_UP_USERNAME_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='nickname']");
     public static final By SIGN_UP_USER_PASSWORD_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-6 col-lg-6'] //input[@name='password']");
@@ -115,16 +118,16 @@ public class Locators {
 
     //Footer Tests
     public static final By FOOTER_CONTACT_US = By.xpath("//a[@href='https://romanceabroad.com/tickets/' and 'Contact us']");
-    public static final By FOOTER_TAB = By.xpath("//div[@class='col-sm-3 col-md-2']//ul//li//a");
+    public static final By FOOTER_TAB = By.xpath("//div[@class='footer-menu']//a");
+    public static final By FOOTER_LINKS = By.xpath("//ul//li//a");
+
+    //   public static final By FOOTER_TAB = By.xpath("//div[@class='col-sm-3 col-md-2']//ul//li//a");
+
     public static final By CONTACT_US_TECH_QUESTIONS = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-10 col-lg-8']//option[@value=2]");
     public static final By CONTACT_US_USER_NAME_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-10 col-lg-8']//input[@name='user_name']");
     public static final By CONTACT_US_USER_EMAIL_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-10 col-lg-8']//input[@name='user_email']");
     public static final By CONTACT_US_SUBJECT_FIELD = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-10 col-lg-8']//input[@name='subject']");
     public static final By CONTACT_US_MESSAGE_FIELD = By.xpath("//div[@class='col-xs-12 col-lg-8']//textarea[@name='message']");
     public static final By CONTACT_US_SEND_FORM_BUTTON = By.xpath("//input[@type='submit']");
-    public static final By FOOTER_SITE_MAP_LINK_MENU = By.xpath("//ul//li//a");
-
-
-
 
 }

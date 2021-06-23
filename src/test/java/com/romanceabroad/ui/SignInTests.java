@@ -7,6 +7,7 @@ public class SignInTests extends BaseUI {
     String currentSignInForm;
 
     @Test
+
     public void SignInPageAssertionTestCase1() {
         signInPage.clickLinkSignInWebElement();
         currentSignInForm = driver.getCurrentUrl();

@@ -12,7 +12,7 @@ public class MainPageTests extends BaseUI {
     String homePageBookNow;
     String homePageJoinToday;
 
-    @Test //TC passed
+    @Test
     public void testMainPageAssertEgualTestCase1() {
         mainPage.clickLinkHomePage();
         currentUrlHome = driver.getCurrentUrl();
@@ -20,7 +20,7 @@ public class MainPageTests extends BaseUI {
         Assert.assertEquals(currentUrlHome, Data.expectedUrlHome);
     }
 
-    @Test //TC passed
+    @Test
     public void testMainPageBookNowSave60TestCase2() {
         mainPage.clickHomePageBookNow();
         homePageBookNow = driver.getCurrentUrl();
@@ -28,7 +28,7 @@ public class MainPageTests extends BaseUI {
         Assert.assertEquals(homePageBookNow, Data.expectedHomePageBookNow);
     }
 
-    @Test//Lesson 12 AjaxscrollToButtom//TC passed
+    @Test
     public void testMainPageJoinTodayWithAjaxclickTestCase3() {
         mainPage.scrollToBottomOfPage();
         mainPage.clickHomePageLinkJoinToday();
@@ -37,19 +37,19 @@ public class MainPageTests extends BaseUI {
         Assert.assertEquals(homePageJoinToday, Data.expectedHomePageJoinToday);
     }
 
-    @Test //Lesson12 //AjaxClick //TC passed
+    @Test
     public void testMainPageSupportEmailWithAjaxClickTestCase4() {
         mainPage.ajaxClick(Locators.LINK_HOME_PAGE);
         mainPage.clickHomePageSupportByEmail();
     }
 
-    @Test // Iframe Homework Lesson 7 //TC passed
+    @Test
     public void testMainPageIframeYoutubeTestCase5() {
         mainPage.clickIframeYoutube();
         mainPage.clickButtonIframeYoutube();
     }
 
-    @Test // Iframe Homework Lesson 13//TC passed
+    @Test
     public void testIframeYoutubeSizeTestCase6() {
         int numbersOfIframes = mainPage.verifyIframeYoutubeSize();
         Assert.assertTrue(numbersOfIframes > 0);
@@ -57,8 +57,8 @@ public class MainPageTests extends BaseUI {
 
     }
 
-    @Test//test have moved to Registration test /  Lesson 9
-    public void testGetAllLinksByLoopTestCase7() {  //for iteration//TC passed
+    @Test
+    public void testGetAllLinksByLoopTestCase7() {
 
         List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());
@@ -72,8 +72,8 @@ public class MainPageTests extends BaseUI {
         }
     }
 
-    @Test//Lesson 11 >>>
-    public void testMainLinkByLoopTestCase8() {  //for iteration tc passed
+    @Test
+    public void testMainLinkByLoopTestCase8() {
 
         String expectedTitle = "Ukrainian women for marriage";
 
@@ -94,8 +94,8 @@ public class MainPageTests extends BaseUI {
         }
     }
 
-    @Test   // Homework Lesson 10,16 // tc passed, links opened
-    public void SmokeTestMainPageTestCase9() {  //for iteration with com.romanceabroad.ui.BlogPage
+    @Test
+    public void SmokeTestMainPageTestCase9() {
 
         List<WebElement> mainTabs = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
 
@@ -106,19 +106,14 @@ public class MainPageTests extends BaseUI {
         }
     }
 
-    @Test //Lesson 14 //TC passed //checked links by elements and attributes
+    @Test
     public void testLinksOnMainPageTestCase10 () {
         mainPage.checkLinksOnWebPage("//a", "href");
     }
 
-    @Test //Lesson 20 tc passed
-    public void printTestCase11() {
-        searchPage.javaWait(5000);
-    }
 
-    @Test //Lesson 19 tc passed
-    public void test9LoopTestCase12() {  //for iteration   //test have moved to Registration test /  Lesson 9,16
-
+    @Test
+    public void test9LoopTestCase11() {
         List<WebElement> links = driver.findElements(Locators.TAB_OF_MAIN_PAGE);
         System.out.println(links.size());
         for (int i = 0; i < links.size(); i++) {

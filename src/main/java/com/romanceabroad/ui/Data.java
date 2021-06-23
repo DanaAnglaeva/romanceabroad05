@@ -45,17 +45,6 @@ public class Data {
     public static final String expectedUrlGift = "https://romanceabroad.com/store/category-sweets";
     public static final String searchGiftSpa = "Spa";
 
-    public static final String expectedTitleGifts = "Gifts";
-    public static final String expectedTitleRelatedItems = "Related items";
-    public static final String expectedTitleGiftSpa = "Spa";
-    public static final String expectedTitleGiftChocolateAndFruits = "Chocolate and Fruits";
-    public static final String expectedTitleGiftTeddyBear = "Teddy bear";
-    public static final String expectedTitleGiftSushiSets = "Sushi sets";
-    public static final String expectedTitleGiftToursToUkraine = "TOURS TO UKRAINE";
-    public static final String expectedTitleGiftFlowerBasket = "Flower basket";
-    public static final String expectedTitleGiftVipToutToUkraine = "VIP individual tour to Ukraine";
-
-
     //Tour data
     public static final String expectedUrlTour = "https://romanceabroad.com/store/sweets/20-tour_to_ukraine";
     public static final String searchFieldVipTourToUkraine = "VIP Individual tour to Ukraine";

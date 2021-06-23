@@ -22,8 +22,8 @@ public class FooterPage extends BaseActions {
         driver.findElement(Locators.CONTACT_US_MESSAGE_FIELD).sendKeys(message);
         //driver.findElement(com.romanceabroad.ui.Locators.CONTACT_US_SEND_FORM).click();
     }
-    public void clickFooterSiteMapLinkMenu () {
-            driver.findElement(Locators.FOOTER_SITE_MAP_LINK_MENU).click();
+    public void clickFooterLinkMenu () {
+            driver.findElement(Locators.FOOTER_LINKS).click();
         }
     }
 
