@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -32,11 +33,10 @@ public class BaseUI<alwaysRun> {
     SoftAssert softAssert = new SoftAssert();
 
     @BeforeMethod (groups = {"user", "admin","ie"}, alwaysRun = true)
-
     @Parameters("browser")
 
     public void setup(@Optional("chrome") String browser, Method method){
-
+        Reports.start(method.getDeclaringClass().getName() + " : " + method.getName());
         // Check if parameter passed from TestNG is 'firefox'
         if (browser.equalsIgnoreCase("firefox")) {
             // Create firefox instance
@@ -79,7 +79,12 @@ public class BaseUI<alwaysRun> {
         driver.get(mainUrl);
     }
     @AfterMethod
-    public void afterActions() {
+    public void afterActions(ITestResult testResult) {
+        if (testResult.getStatus() ==  ITestResult.FAILURE) {
+            Reports.fail(driver, testResult.getName());
+        }
+        Reports.stop();
+
         //    driver.quit();
     }
 }

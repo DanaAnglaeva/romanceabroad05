@@ -4,8 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class BlogTests extends BaseUI {
 
     String currentUrlBlog;
@@ -22,15 +20,8 @@ public class BlogTests extends BaseUI {
     @Test
     public void testBlogLoopForAllMenuUlListTestCase2() {
         blogPage.clickLinkBlog();
-        List<WebElement> links = driver.findElements(Locators.LIST_OF_BLOG_LINKS);
-        System.out.println(links.size());
-        for (int i = 0; i < links.size(); i++) {
-            String info = links.get(i).getText();
-            System.out.println(info);
-            links.get(i).click();
-            blogPage.clickLinkBlog();
-            links = driver.findElements(Locators.LIST_OF_BLOG_LINKS);
-        }
+        blogPage.getListOfLinksWebElementBlogLinkByLoop();
+
     }
 
     @Test
@@ -61,9 +52,9 @@ public class BlogTests extends BaseUI {
     }
 
     @Test
-
     public void testBlogGetTextIfElseFailedTestCase5() {
         blogPage.clickLinkBlog();
+
         WebElement blogTabMenu = driver.findElement(Locators.LIST_OF_BLOG_LINKS);
 
         if (!blogTabMenu.getText().contains("Kiev dating agency")) {

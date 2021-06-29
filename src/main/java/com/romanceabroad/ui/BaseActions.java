@@ -205,11 +205,24 @@ public class BaseActions {
 
     public void clickValueOfLists(By locator, String text) {
 
+        Reports.log("Collect elements in list");
         List<WebElement> elements = driver.findElements(locator);
+
+        Reports.log("Starting using loop with size of list");
         for (int i = 0; i < elements.size(); i++) {
+
+            Reports.log("Create new Webelement of list");
             WebElement elementOfList = elements.get(i);
+
+            Reports.log("Create new String with text from element of list");
             String value = elementOfList.getText();
+
+            Reports.log("Value of list: " + value);
             if (value.contains(text)) {
+                Reports.log("Wait element of list is clickable ");
+                wait.until(ExpectedConditions.elementToBeClickable(elementOfList));
+
+                Reports.log("Click list of elements");
                 elementOfList.click();
             }
         }

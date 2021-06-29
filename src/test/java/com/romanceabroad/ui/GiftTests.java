@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import javax.swing.*;
 import java.util.List;
 
 public class GiftTests extends BaseUI {
@@ -25,45 +26,35 @@ public class GiftTests extends BaseUI {
         giftPage.clickLinkGift();
         giftPage.findGiftSpa();
         giftPage.clickButtonGiftSearch();
-
+        giftPage.getWebElementsLinksByLoopGiftBestsellers();
+        giftPage.clickLinkGift();
     }
 
     @Test
-    public void testGetGiftsLinkByLoopRelatedItemsTestCase3() {
+    public void clickLinksListRelatedItemsByLoopTestCase3() {
 
         giftPage.clickLinkGift();
         giftPage.driver.findElement(Locators.GIFTS_BESTSELLERS).click();
-        List<WebElement> links = driver.findElements(Locators.LIST_RELATED_ITEMS);
-
-        for (int i = 0; i < links.size(); i++) {
-            String info = links.get(i).getText();
-            System.out.println(info);
-        }
+        giftPage.getWebElementsLinksByLoopListRelatedItems();
     }
 
     @Test
-    public void testGetGiftsLinkByLoopBestsellersTestCase4() {
-
+    public void testGetLinksGiftsBestsellersByLoopTestCase4() {
         giftPage.clickLinkGift();
-        List<WebElement> links = driver.findElements(Locators.GIFTS_BESTSELLERS);
+        giftPage.findGiftSpa();
+        giftPage.clickButtonGiftSearch();
+        driver.navigate().back();
+        WebElement giftsBestSellers = driver.findElement(Locators.GIFTS_BESTSELLERS);
+        if (giftsBestSellers.isDisplayed()) {
+            List<WebElement> links = driver.findElements(Locators.GIFTS_BESTSELLERS);
 
-        for (int i = 0; i < links.size(); i++) {
-            String info = links.get(i).getText();
-            System.out.println(info);
-        }
-    }
-
-    @Test
-    public void clickLinksListRelatedItemsByLoopTestCase5() {
-
-        giftPage.clickLinkGift();
-        giftPage.driver.findElement(Locators.GIFTS_BESTSELLERS).click();
-        List<WebElement> links = driver.findElements(Locators.LIST_RELATED_ITEMS);
-
-        for (int i = 0; i < links.size(); i++) {
-            String info = links.get(i).getText();
-            System.out.println(info);
+            for (int i = 0; i < links.size(); i++) {
+                String info = links.get(i).getText();
+                System.out.println(info);
+            }
+            giftPage.clickLinkGift();
         }
     }
 }
+
 

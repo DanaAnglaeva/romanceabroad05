@@ -1,6 +1,6 @@
 package com.romanceabroad.ui;
 
- import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,7 +13,6 @@ public class RegistrationTests<fori> extends BaseUI {
     public static final boolean testCase4 = false;
     public static final boolean testCase5 = true;
     public static final boolean testCase6 = false;
-    public static final boolean testCase7 = true;
 
     @Test(priority = 1, enabled = testCase1, groups = {"user", "admin"})
      public void testRegistrationTestCase1() {
@@ -96,6 +95,21 @@ public class RegistrationTests<fori> extends BaseUI {
                 month, day, year, city, location);
     }
 
+    @Test(priority = 3, enabled = testCase6, groups = {"user", "admin"},
+            dataProvider = "Registration3", dataProviderClass = DataProviders.class)
+    public void testRegistrationNegativeTestCase6(String email, String password, boolean requirement) {
+
+        mainPage.clickJoinButton();
+        mainPage.completeFirstPartOfRegistration(email, password);
+        if (!requirement) {
+            Assert.assertTrue(driver.findElement
+                    (Locators.TOOLTIP_ERROR).isDisplayed());
+        } else {
+            mainPage.clickNextButton();
+            mainPage.completeSecondPartOfRegistration(Data.nickname, Data.phone,
+                    Data.month, Data.day, Data.year, Data.city, Data.location);
+        }
+    }
      @Test(dataProvider = "RegistrationContactUs", dataProviderClass = DataProviders.class)
     public void testContactUsTestCase7(String name, String email, String subject, String message) {
         searchPage.clickLinkSearch();
@@ -138,21 +152,6 @@ public class RegistrationTests<fori> extends BaseUI {
         }
     }
 
-     @Test(priority = 3, enabled = testCase7, groups = {"user", "admin"},
-            dataProvider = "Registration3", dataProviderClass = DataProviders.class)
-    public void testRegistrationNegativeTestCase7(String email, String password, boolean requirement) {
-
-        mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration(email, password);
-        if (!requirement) {
-            Assert.assertTrue(driver.findElement
-                    (Locators.TOOLTIP_ERROR).isDisplayed());
-        } else {
-            mainPage.clickNextButton();
-            mainPage.completeSecondPartOfRegistration(Data.nickname, Data.phone,
-                    Data.month, Data.day, Data.year, Data.city, Data.location);
-         }
-    }
 }
 
 

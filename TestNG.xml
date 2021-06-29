@@ -2,51 +2,51 @@
 
 <suite name="TestSuite" parallel="none">
 
-<!--            <test name="IETestCases">-->
-<!--                <parameter name="browser" value="ie"/>-->
-<!--                <classes>-->
-<!--                    <class name ="com.romanceabroad.ui.TourTests"/>-->
-<!--                </classes>-->
-<!--            </test>-->
+            <test name="IETestCases">
+                <parameter name="browser" value="ie"/>
+                <classes>
+                    <class name ="com.romanceabroad.ui.RegistrationTests2"/>
+                </classes>
+            </test>
 
 <!--            <test name="FirefoxTestCases">-->
 <!--                <parameter name="browser" value="firefox"/>-->
 <!--                <classes>-->
-<!--                    <class name ="com.romanceabroad.ui.TourTests"/>-->
+<!--                    <class name ="com.romanceabroad.ui.MediaTests"/>-->
 <!--                </classes>-->
 
 <!--            </test>-->
 
-<!--            <test name="ChromeTestCases">-->
-<!--                <parameter name="browser" value="chrome"/>-->
-<!--                <classes>-->
-<!--                    <class name ="com.romanceabroad.ui.TourTests"/>-->
-<!--                </classes>-->
+            <test name="ChromeTestCases">
+                <parameter name="browser" value="chrome"/>
+                <classes>
+                    <class name ="com.romanceabroad.ui.RegistrationTests2"/>
+                </classes>
 
-<!--            </test>-->
-<!--    </suite>-->
+            </test>
+    </suite>
 
-    <test name="ChromeTestCases2">
-    <parameter name="browser" value="chrome"/>
+<!--    <test name="ChromeTestCases2">-->
+<!--    <parameter name="browser" value="chrome"/>-->
 
-    <groups>
-      <run>
-        <exclude name="ie"/>
-        <include name="admin"/>
-        <include name="user"/>
-    </run>
-    </groups>
-    <classes>
+<!--    <groups>-->
+<!--      <run>-->
+<!--        <exclude name="ie"/>-->
+<!--        <include name="admin"/>-->
+<!--        <include name="user"/>-->
+<!--    </run>-->
+<!--    </groups>-->
+<!--    <classes>-->
 
-       <class name="com.romanceabroad.ui.RegistrationTests">
-              <methods>
-                 <include name=".*TestCase7.*"/>
-<!--                 <include name=".*TestCase2.*"/>-->
-<!--                 <include name=".*TestCase3.*"/>-->
+<!--       <class name="com.romanceabroad.ui.RegistrationTests">-->
+<!--              <methods>-->
+<!--                 <include name=".*TestCase7.*"/>-->
+<!--&lt;!&ndash;                 <include name=".*TestCase2.*"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                 <include name=".*TestCase3.*"/>&ndash;&gt;-->
 
-              </methods>
-    </class>
-    </classes>
+<!--              </methods>-->
+<!--    </class>-->
+<!--    </classes>-->
 
-    </test>
-        </suite>
+<!--    </test>-->
+<!--        </suite>-->
