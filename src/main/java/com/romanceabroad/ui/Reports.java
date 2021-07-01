@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Reports {
-    private  static final boolean jenkinsOption = true;
+    private  static final boolean jenkinsOption = false;
     public static ExtentHtmlReporter htmlReporter;
 
     public static ExtentReports extent;
@@ -33,11 +33,11 @@ public class Reports {
         String formattedDate = ldt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));
 
 
-//        if(jenkinsOption){
-//            currentTestSuiteResultsPath = "Suite/";
-//        }else {
+        if(jenkinsOption){
+            currentTestSuiteResultsPath = "Suite/";
+        }else {
             currentTestSuiteResultsPath = "Suite " + formattedDate + "/";
-   //     }
+        }
 
         new File(ROOT_PATH + currentTestSuiteResultsPath).mkdir();
         htmlReporter = new ExtentHtmlReporter(ROOT_PATH + currentTestSuiteResultsPath + "report.html");

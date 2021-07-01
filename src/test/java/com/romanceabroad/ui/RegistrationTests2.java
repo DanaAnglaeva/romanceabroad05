@@ -15,6 +15,7 @@ public class RegistrationTests2 extends BaseUI {
     @Video(name = "Registration test" )
     @Test(priority = 1, enabled = testCase1, groups = {"user", "admin"})
     public void testRegistrationTestCase1() {
+
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_REGISTRATION));
         mainPage.clickJoinButton();
         mainPage.completeFirstPartOfRegistration(Data.email, Data.password);
