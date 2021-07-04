@@ -29,7 +29,7 @@ public class Locators {
     public static final By LINK_HOME_PAGE = By.xpath("//a[text() = 'HOME']");
     public static final By IFRAME_YOUTUBE = By.xpath("//iframe[@src='https://www.youtube.com/embed/RRECuJzm3IY?start=85']");
     public static final By YOUTUBE_BUTTON_INSIDE_IFRAME_ = By.xpath("//button[@class='ytp-large-play-button ytp-button']");
-    public static final By HOME_PAGE_BOOK_NOW = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
+    public static final By HOME_PAGE_BOOK_NOW = By.xpath("//div[@class='discountalert']//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
     public static final By HOME_PAGE_LINK_JOIN_TODAY = By.xpath("//a[text()='JOIN TODAY!']");
     public static final By HOME_PAGE_SUPPORT_BY_EMAIL = By.xpath("//a[@href='mailto:support@romanceabroad.com']");
     public static final By TAB_OF_MAIN_PAGE = By.xpath("//ul[@class='navbar-nav']//li");

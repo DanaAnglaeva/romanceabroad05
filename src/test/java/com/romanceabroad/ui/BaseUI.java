@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.lang.reflect.Method;
 
-public class BaseUI<alwaysRun> {
+public class BaseUI  <alwaysRun> {
 
     WebDriver driver;
     WebDriverWait wait;

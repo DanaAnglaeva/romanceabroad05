@@ -19,11 +19,11 @@ public class BaseActions {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-
     public BaseActions(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
+
     //by locators
     public static String generateNewNumber(String name, int lenght) {
         return name + RandomStringUtils.random(lenght, "123");
@@ -43,6 +43,7 @@ public class BaseActions {
         Select select = new Select(driver.findElement(locator));
         select.selectByValue(value);
     }
+
     //Web elements
     public void getDropDownListByIndex(WebElement element, int index) {
         Select select = new Select(element);
@@ -211,23 +212,25 @@ public class BaseActions {
         Reports.log("Starting using loop with size of list");
         for (int i = 0; i < elements.size(); i++) {
 
-            Reports.log("Create new Webelement of list");
-            WebElement elementOfList = elements.get(i);
+        Reports.log("Create new Webelement of list");
+        WebElement elementOfList = elements.get(i);
 
-            Reports.log("Create new String with text from element of list");
-            String value = elementOfList.getText();
+        Reports.log("Create new String with text from element of list");
+        String value = elementOfList.getText();
 
-            Reports.log("Value of list: " + value);
-            if (value.contains(text)) {
-                Reports.log("Wait element of list is clickable ");
-                wait.until(ExpectedConditions.elementToBeClickable(elementOfList));
+        Reports.log("Value of list: " + value);
+        if (value.contains(text)) {
 
-                Reports.log("Click list of elements");
-                elementOfList.click();
-            }
-        }
+        Reports.log("Wait element of list is clickable ");
+        wait.until(ExpectedConditions.elementToBeClickable(elementOfList));
 
-    }
+        Reports.log("Click list of elements");
+        elementOfList.click();
+
+         }
+     }
+
+   }
 }
 
 
