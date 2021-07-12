@@ -43,8 +43,8 @@ public class DataProviders {
     public static Object[][] testRegistration2() {
         return new Object[][]{
                 {Data.email_gmail, Data.generated_nickname, true},
-                {Data.invalid_email_yahoo, Data.generated_nickname, false},
-                {Data.email_hotmail, Data.generated_nickname, true},
+//                {Data.invalid_email_yahoo, Data.generated_nickname, false},
+//                {Data.email_hotmail, Data.generated_nickname, true},
         };
     }
 

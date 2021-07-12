@@ -97,7 +97,8 @@ public class Locators {
     public static final By HEADER_ROMANCE_LOGO_HEART = By.xpath("//div[@class='logo-mobile-version top-menu-item']//a[@href='https://romanceabroad.com/']");
     public static final By HEADER_BUTTON_FIND_PEOPLE = By.xpath("//button[@id='main_search_button_user_line']");
     public static final By HEADER_BUTTON_LOGIN = By.cssSelector("#ajax_login_link");
-    public static final By HEADER_LIST_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
+    public static final By HEADER_LINKS_OF_DROPDOWN_MENU = By.xpath("//div[@class='main-menu']//ul//li");
+    public static final By HEADER_DROPDOWN_MENU = By.xpath("//header[@id='main-menu-container'] //i[@class='fa fa-bars fa-lg item']");
     public static final By HEADER_LEFT_DROPDOWN_MENU = By.xpath("//a[@class='uam-top link-open-menu btn-slide']");
     public static final By HEADER_SIGN_UP_FORM_LINK = By.xpath("//a[@id='user_main-menu-registration-item']");
 

@@ -31,9 +31,9 @@ public class MainPage extends BaseActions {
 
     public void completeFirstPartOfRegistration(String email, String password) {
 
-        Reports.log("Wait email text field");
-        driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
-
+   //     Reports.log("Wait email text field");
+  //      driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        javaWaitSec(3);
         Reports.log("Type email text field: " + email);
         driver.findElement(Locators.TEXT_FIELD_EMAIL).sendKeys(email);
 
