@@ -9,9 +9,9 @@ import java.util.List;
 public class TourTests extends BaseUI {
     String currentUrlTour;
 
-    public static final boolean testCase1 = true;
-    public static final boolean testCase2 = false;
-    public static final boolean testCase3 = true;
+    public static final boolean testCase1 = false;
+    public static final boolean testCase2 = true;
+    public static final boolean testCase3 = false;
 
     @Test(priority = 2,enabled = testCase1, groups = {"ie","user","admin", })
 

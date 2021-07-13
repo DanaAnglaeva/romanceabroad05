@@ -9,9 +9,9 @@ public class RegistrationTests<fori> extends BaseUI {
 
     public static final boolean testCase1 = true;
     public static final boolean testCase2 = false;
-    public static final boolean testCase3 = true;
+    public static final boolean testCase3 = false;
     public static final boolean testCase4 = false;
-    public static final boolean testCase5 = true;
+    public static final boolean testCase5 = false;
     public static final boolean testCase6 = false;
 
     @Test(priority = 1, enabled = testCase1, groups = {"user", "admin"})

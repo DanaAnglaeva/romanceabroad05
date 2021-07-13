@@ -4,54 +4,54 @@
 
     <test name="Galaxy S5 test cases">
 
+        <parameter name="testEnv" value="qa"/>
         <parameter name="testBox" value="mobile"/>
         <parameter name="browser" value="chrome"/>
         <parameter name="deviceName" value="Galaxy S5"/>
 
-
         <classes>
             <class name ="com.romanceabroad.ui.RegistrationTests2"/>
         </classes>
 
-    </test>
+<!--    </test>-->
 
- <test name="iPhone X test case">
+<!-- <test name="iPhone X test case">-->
 
-        <parameter name="testBox" value="mobile"/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="deviceName" value="iPhone X"/>
-
-
-        <classes>
-            <class name ="com.romanceabroad.ui.RegistrationTests2"/>
-        </classes>
-
-    </test>
-
-    <test name="iPhone 6">
-
-        <parameter name="testBox" value="mobile"/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="deviceName" value="iPhone 6"/>
+<!--        <parameter name="testBox" value="mobile"/>-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <parameter name="deviceName" value="iPhone X"/>-->
 
 
-        <classes>
-            <class name ="com.romanceabroad.ui.RegistrationTests2"/>
-        </classes>
+<!--        <classes>-->
+<!--            <class name ="com.romanceabroad.ui.RegistrationTests2"/>-->
+<!--        </classes>-->
 
-    </test>
+<!--    </test>-->
 
-    <test name="Galaxy Note 3 test cases">
+<!--    <test name="iPhone 6">-->
 
-        <parameter name="testBox" value="mobile"/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="deviceName" value="Galaxy Note 3"/>
+<!--        <parameter name="testBox" value="mobile"/>-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <parameter name="deviceName" value="iPhone 6"/>-->
 
 
-        <classes>
+<!--        <classes>-->
+<!--            <class name ="com.romanceabroad.ui.RegistrationTests2"/>-->
+<!--        </classes>-->
 
-            <class name ="com.romanceabroad.ui.RegistrationTests2"/>
-        </classes>
+<!--    </test>-->
+
+<!--    <test name="Galaxy Note 3 test cases">-->
+
+<!--        <parameter name="testBox" value="mobile"/>-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <parameter name="deviceName" value="Galaxy Note 3"/>-->
+
+
+<!--        <classes>-->
+
+<!--            <class name ="com.romanceabroad.ui.RegistrationTests2"/>-->
+<!--        </classes>-->
 
     </test>
 

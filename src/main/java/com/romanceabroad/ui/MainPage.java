@@ -3,12 +3,16 @@ package com.romanceabroad.ui;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPage extends BaseActions {
+
+    @FindBy(xpath = "//button[@id='show-registration-block']")
+    WebElement registrationButton;
 
     public MainPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -17,7 +21,7 @@ public class MainPage extends BaseActions {
     public void clickJoinButton() {
 
         Reports.log("Click Button Registration");
-        driver.findElement(Locators.BUTTON_REGISTRATION).click();
+        registrationButton.click();
     }
 
     public void javaWait(int ms) {
@@ -31,8 +35,8 @@ public class MainPage extends BaseActions {
 
     public void completeFirstPartOfRegistration(String email, String password) {
 
-   //     Reports.log("Wait email text field");
-  //      driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        //     Reports.log("Wait email text field");
+        //      driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
         javaWaitSec(3);
         Reports.log("Type email text field: " + email);
         driver.findElement(Locators.TEXT_FIELD_EMAIL).sendKeys(email);
@@ -44,6 +48,7 @@ public class MainPage extends BaseActions {
         driver.findElement(Locators.TEXT_FIELD_PASSWORD).sendKeys(password);
 
     }
+
     public void clickNextButton() {
 
         Reports.log("Wait Next Button");
@@ -133,6 +138,42 @@ public class MainPage extends BaseActions {
         System.out.println(size + "" + "iFrame number");
         return size;
     }
+
+    public void clickMobileMenu(String valueOfBox) {
+        if (valueOfBox.contains("mobile")) {
+            driver.findElement(Locators.MOBILE_MENU).click();
+        }
+    }
+
+    public void clickSearchParameters(String valueOfBox) {
+        if (valueOfBox.contains("mobile")) {
+            driver.findElement(Locators.MOBILE_LINK_SEARCH_PARAMETERS).click();
+        }
+    }
+    public void clickMobileMenu() {
+        try {
+            driver.findElement(Locators.MOBILE_MENU).click();
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void clickMobileMenu2() {
+        if (driver.findElement(Locators.MOBILE_MENU).isDisplayed()) {
+            driver.findElement(Locators.MOBILE_MENU).click();
+        }
+    }
+
+    public void clickMobileMenu3() {
+        if (driver.findElements(Locators.MOBILE_MENU).size() > 0) {
+            driver.findElement(Locators.MOBILE_MENU).click();
+        }
+    }
 }
+
+
+
+
+
 
 

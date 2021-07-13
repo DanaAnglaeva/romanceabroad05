@@ -2,18 +2,19 @@
 
 <suite name="Mobile Test Suite" parallel="none">
 
-<!--                <test name="Chrome test cases">-->
+                <test name="Chrome test cases">
 
-<!--                    <parameter name="testBox" value="web"/>-->
-<!--                    <parameter name="version" value="59.0"/>-->
-<!--                    <parameter name="browser" value="mobile"/>-->
-<!--                    <parameter name="platform" value="Windows 10"/>-->
-<!--                    <classes>-->
-<!--                        <class name ="com.romanceabroad.ui.RegistrationTests2"/>-->
-<!--                    </classes>-->
+                    <parameter name="testEnv" value="qa"/>
+                    <parameter name="testBox" value="web"/>
+                    <parameter name="version" value="59.0"/>
+                    <parameter name="browser" value="remoteFirefox"/>
+                    <parameter name="platform" value="Windows 10"/>
+                    <classes>
+                        <class name ="com.romanceabroad.ui.RegistrationTests2"/>
+                    </classes>
 
-<!--                </test>-->
-<!--        </suite>-->
+                </test>
+        </suite>
 
     <!--    <test name="ChromeTestCases2">-->
     <!--    <parameter name="browser" value="chrome"/>-->
@@ -41,51 +42,52 @@
     <!--        </suite>-->
 
 
-    <test name="Chrome tests cases">
+<!--    <test name="Chrome tests cases">-->
 
-        <parameter name="testBox" value="web"/>
-        <parameter name="testBox" value="web"/>
-        <parameter name="version" value="59.0"/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="platform" value="Window 10"/>
+<!--        <parameter name="testEnv" value="uat"/>-->
+<!--        <parameter name="testBox" value="web"/>-->
+<!--        <parameter name="testBox" value="web"/>-->
+<!--        <parameter name="version" value="59.0"/>-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <parameter name="platform" value="Window 10"/>-->
 
-         <classes>
+<!--         <classes>-->
 
-            <class name="com.romanceabroad.ui.RegistrationTests2"/>
+<!--            <class name="com.romanceabroad.ui.RegistrationTests2"/>-->
 
-         </classes>
+<!--         </classes>-->
 
-    </test>
+<!--    </test>-->
 
-    <test name="Firefox test cases">
-         <parameter name="testBox" value="web"/>
-         <parameter name="version" value="68.0"/>
-         <parameter name="browser" value="Firefox"/>
-         <parameter name="platform" value="macOS 10.14"/>
+<!--    <test name="Firefox test cases">-->
+<!--         <parameter name="testBox" value="web"/>-->
+<!--         <parameter name="version" value="68.0"/>-->
+<!--         <parameter name="browser" value="Firefox"/>-->
+<!--         <parameter name="platform" value="macOS 10.14"/>-->
 
-         <classes>
+<!--         <classes>-->
 
-            <class name="com.romanceabroad.ui.RegistrationTests2"/>
+<!--            <class name="com.romanceabroad.ui.RegistrationTests2"/>-->
 
-         </classes>
+<!--         </classes>-->
 
-    </test>
+<!--    </test>-->
 
-    <test name="IE test cases">
+<!--    <test name="IE test cases">-->
 
-    <parameter name="testBox" value="web"/>
-    <parameter name="version" value="11.285"/>
-    <parameter name="browser" value="Internet Explorer"/>
-    <parameter name="platform" value="Window 10"/>
+<!--    <parameter name="testBox" value="web"/>-->
+<!--    <parameter name="version" value="11.285"/>-->
+<!--    <parameter name="browser" value="Internet Explorer"/>-->
+<!--    <parameter name="platform" value="Window 10"/>-->
 
 
-    <classes>
+<!--    <classes>-->
 
-        <class name="com.romanceabroad.ui.RegistrationTests2"/>
+<!--        <class name="com.romanceabroad.ui.RegistrationTests2"/>-->
 
-    </classes>
+<!--    </classes>-->
 
-   </test>
+<!--   </test>-->
 
 <!--    <test name="Edge test cases">-->
 <!--         <parameter name="testBox" value="web"/>-->
@@ -119,4 +121,4 @@
 
 <!--        </test>-->
 
-            </suite>
+<!--            </suite>-->

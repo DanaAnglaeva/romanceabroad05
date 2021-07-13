@@ -1,5 +1,6 @@
 package com.romanceabroad.ui;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,9 +30,15 @@ public class SearchPage extends BaseActions {
     public void getDropDownListByRegistrationDate() {
         getDropDownListByText(Locators.DROP_DOWN_LIST_SORT_BY, "Registration date");
     }
-        public void clickButtonSearch () {
-            driver.findElement(Locators.BUTTON_SEARCH).click();
-        }
+
+    public void clickButtonSearch() {
+        driver.findElement(Locators.BUTTON_SEARCH).click();
+    }
+
+
 }
+
+
+
 
 
