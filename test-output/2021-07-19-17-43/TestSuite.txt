@@ -1,0 +1,48 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 3, Errors: 0, Skipped: 4, Time elapsed: 5.563 s <<< FAILURE! - in TestSuite
+setup(com.romanceabroad.ui.RegistrationTests2)  Time elapsed: 3.705 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Unable to find a matching set of capabilities
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+remote stacktrace: 
+Command duration or timeout: 1.34 seconds
+Caused by: org.openqa.selenium.SessionNotCreatedException: 
+Unable to find a matching set of capabilities
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+remote stacktrace: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+
+testRegistration9(com.romanceabroad.ui.RegistrationTests2)  Time elapsed: 0.023 s  <<< FAILURE!
+org.testng.internal.reflect.MethodMatcherException: 
+
+[public void com.romanceabroad.ui.RegistrationTests2.testRegistration9(java.lang.String,java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: testRegistration9([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.String) tester123@gmail.com,(java.lang.String) Tester12332323,(java.lang.Boolean) true]
+
+setup(com.romanceabroad.ui.RegistrationTests2)  Time elapsed: 0.73 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Unable to find a matching set of capabilities
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+remote stacktrace: 
+Command duration or timeout: 673 milliseconds
+Caused by: org.openqa.selenium.SessionNotCreatedException: 
+Unable to find a matching set of capabilities
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+remote stacktrace: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-6T1ITKLO', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: unknown
+

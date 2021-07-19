@@ -2,6 +2,7 @@ package com.romanceabroad.ui;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage extends BaseActions {
@@ -12,6 +13,7 @@ public class SearchPage extends BaseActions {
     }
 
     public void clickLinkSearch() {
+  //      wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_SEARCH));
         driver.findElement(Locators.LINK_SEARCH).click();
     }
 

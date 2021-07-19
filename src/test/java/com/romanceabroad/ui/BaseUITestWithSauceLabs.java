@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BaseUITestWithSauceLabs<alwaysRun> {
+public class BaseUITestWithSauceLabs {
 
     WebDriver driver;
     WebDriverWait wait;

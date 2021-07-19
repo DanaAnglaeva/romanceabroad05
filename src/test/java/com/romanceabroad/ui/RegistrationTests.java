@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegistrationTests<fori> extends BaseUI {
+public class RegistrationTests extends BaseUI {
 
     public static final boolean testCase1 = true;
     public static final boolean testCase2 = false;

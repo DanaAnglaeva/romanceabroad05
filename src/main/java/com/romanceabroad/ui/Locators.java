@@ -34,16 +34,20 @@ public class Locators {
     public static final By HOME_PAGE_SUPPORT_BY_EMAIL = By.xpath("//a[@href='mailto:support@romanceabroad.com']");
     public static final By TAB_OF_MAIN_PAGE = By.xpath("//ul[@class='navbar-nav']//li");
     public static final By MOBILE_MENU = By.xpath("//span[@class='navbar-toggler-icon']");
+    public static final By LINK_SIGN_IN = By.xpath("//a[@href='https://romanceabroad.com/users/login_form'][@id='ajax_login_link']");
+    public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");
+    public static final By LINK_TOUR = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
+    public static final By LINK_HOW_WE_WORK = By.xpath("//a[@href = 'https://romanceabroad.com/content/view/how-it-works']");
+    public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
+    public static final By ALERT_WRONG_PASSWORD = By.xpath("//div[@class='error alert-danger alert-warning_pop_']");
 
 
     //HowWeWork Tests
-    public static final By LINK_HOW_WE_WORK = By.xpath("//a[@href = 'https://romanceabroad.com/content/view/how-it-works']");
     public static final By PAGES_CONTENT_LIST_OF_ALL_LINKS = By.xpath("//div[@class='info-content-block wysiwyg']//ul");
     public static final By LIST_OF_LINKS = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']//li");
     public static final By H1_TITLE_OF_PAGE = By.xpath("//h1");
 
     //Search Tests
-    public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
     public static final By DROP_DOWN_LIST_SORT_BY = By.xpath("//div[@class='form-inline']//select");
     public static final By DROP_DOWN_LIST_MIN_USER_AGE = By.cssSelector("#age_min");
     public static final By DROP_DOWN_LIST_MAX_USER_AGE = By.cssSelector("#age_man");
@@ -53,7 +57,6 @@ public class Locators {
     public static final By MOBILE_LINK_SEARCH_PARAMETERS = By.xpath("//div[@class='search-param-button mb10']//a");
 
     //Media/Photo Tests
-    public static final By LINK_MEDIA = By.xpath("//a[@href='https://romanceabroad.com/media/index']");
     public static final By LINK_TAB_USER_PROFILE = By.xpath("//ul[@id='gallery_filters']//a");
     public static final By MEDIA_BLOCK = By.xpath("//div[@class='g-flatty-block']");
 
@@ -66,7 +69,6 @@ public class Locators {
     public static final By GIFTS_BESTSELLERS = By.xpath("//div[@class='col-xs-12 col-sm-12 col-md-12 col-lg-12']//a");
 
     //Tour Tests
-    public static final By LINK_TOUR = By.xpath("//a[@href='https://romanceabroad.com/store/sweets/20-tour_to_ukraine']");
     public static final By TOUR_SEARCH_FIELD = By.cssSelector("#search_product");
     public static final By BUTTON_SEARCH_TOUR = By.xpath("//button[@id='search_friend']");
     public static final By TOUR_GALLERY_WITH_GIFTS = By.xpath("//ul[@class='user-gallery']//li");
@@ -78,9 +80,9 @@ public class Locators {
     public static final By LIST_OF_BLOG_LINKS = By.xpath("//div[@class='info-content-block wysiwyg']//ul//li");
 
     //SignIn Tests
-    public static final By LINK_SIGN_IN = By.xpath("//a[@href='https://romanceabroad.com/users/login_form']");
-    public static final By SIGN_IN_EMAIL_FIELD = By.xpath("//div[@class='col-xs-8'] //input[contains(@name,'email')]");
-    public static final By SIGN_IN_PASSWORD_FIELD = By.xpath("//div[@class='col-xs-8'] //input[contains(@name,'password')]");
+    public static final By SIGN_IN_FORM = By.xpath("//a[@href='https://romanceabroad.com/users/login_form']");
+    public static final By SIGN_IN_EMAIL_FIELD = By.xpath("//div[@class='col-xs-8'] //input[@id='email']");
+    public static final By SIGN_IN_PASSWORD_FIELD = By.xpath("//div[@class='col-xs-8'] //input[@id='password']");
     public static final By SIGN_IN_BUTTON = By.xpath("//button[@type='submit']");
     public static final By LINK_REGISTER = By.xpath("//i[@class='fa fa-arrow-right']");
     public static final By SIGN_IN_WITH_FACEBOOK = By.xpath("//a[@href='https://romanceabroad.com/users_connections/oauth_login/1']");

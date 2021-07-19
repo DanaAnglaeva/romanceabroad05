@@ -57,11 +57,11 @@ public class MainPage extends BaseActions {
 
         Reports.log("Click Next Button");
         driver.findElement(Locators.BUTTON_NEXT).click();
-        try {
-            driver.findElement(Locators.BUTTON_NEXT).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            driver.findElement(Locators.BUTTON_NEXT).click();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void completeSecondPartOfRegistration(String nickname, String phone, String month, String day, String year,
@@ -77,6 +77,7 @@ public class MainPage extends BaseActions {
         clickValueOfLists(Locators.LIST_OF_VALUE_DAY, day);
 
         Reports.log("Click list of month");
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.LIST_OF_MONTHS)));
         driver.findElement(Locators.LIST_OF_MONTHS).click();
 
         Reports.log("Select specific month: " + month);
@@ -142,6 +143,8 @@ public class MainPage extends BaseActions {
     public void clickMobileMenu(String valueOfBox) {
         if (valueOfBox.contains("mobile")) {
             driver.findElement(Locators.MOBILE_MENU).click();
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.MOBILE_MENU)));
+
         }
     }
 
@@ -168,6 +171,20 @@ public class MainPage extends BaseActions {
         if (driver.findElements(Locators.MOBILE_MENU).size() > 0) {
             driver.findElement(Locators.MOBILE_MENU).click();
         }
+    }
+
+    public void clickSignInLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_SIGN_IN));
+        driver.findElement(Locators.LINK_SIGN_IN).click();
+    }
+
+    public void fillingPasswordForSignInFormUsingDataProvider(String password) {
+        driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        driver.findElement(Locators.SIGN_IN_EMAIL_FIELD).sendKeys(Data.email);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(Locators.SIGN_IN_PASSWORD_FIELD)));
+        driver.findElement(Locators.SIGN_IN_PASSWORD_FIELD).sendKeys(password);
+        wait.until(ExpectedConditions.elementToBeClickable(Locators.SIGN_IN_BUTTON));
+        driver.findElement(Locators.SIGN_IN_BUTTON).click();
     }
 }
 

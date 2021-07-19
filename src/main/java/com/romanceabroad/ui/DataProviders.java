@@ -1,5 +1,7 @@
 package com.romanceabroad.ui;
 
+
+
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
@@ -66,5 +68,31 @@ public class DataProviders {
             out.add(new Object[]{data[0], data[1], false});
         });
         return out.toArray(new Object[out.size()][]);
+    }
+
+    @DataProvider(name = "NewRequirementsForPassword")
+    public static Object[][] testPassword() {
+        return new Object[][]{
+                {"Nyc1!", true},
+                {"Nyc2@", true},
+                {"#3Nyc", true},
+                {"$Nyc4", true},
+                {"Nyc%5", true},
+                {"Nyc6&", true},
+                {"Nyc&7", true},
+                {"Nyc*11", true},
+                {"Nyc*12-", true},
+                {"Nyc*13+", true},
+                {"Nyc*14/", true},
+                {"Nyc-15/", true},
+                {"Nyc-(16)", true},
+                {"NYC", false},
+                {"///", false},
+                {"222", false},
+                {"@@@aaa", false},
+                {"", false},
+//                {Data.invalid_email_yahoo, Data.generated_nickname, false},
+//                {Data.email_hotmail, Data.generated_nickname, true},
+        };
     }
 }

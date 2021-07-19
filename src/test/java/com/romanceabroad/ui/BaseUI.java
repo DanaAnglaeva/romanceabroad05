@@ -1,5 +1,4 @@
 package com.romanceabroad.ui;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class BaseUI<alwaysRun> {
+public class BaseUI {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -101,6 +100,7 @@ public class BaseUI<alwaysRun> {
                         driver = new ChromeDriver();
                         driver.get("chrome://settings/clearBrowserData");
                         break;
+
                     case IE:
                         System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
                         driver = new InternetExplorerDriver();
@@ -122,7 +122,7 @@ public class BaseUI<alwaysRun> {
                         break;
 
                     default:
-                        System.out.println("Default!!!");
+                        System.out.println("Default");
                         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
                         driver = new ChromeDriver();
                         driver.get("chrome://settings/clearBrowserData");

@@ -1,5 +1,6 @@
 package com.romanceabroad.ui;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SignInTests extends BaseUI {
@@ -38,11 +39,23 @@ public class SignInTests extends BaseUI {
     }
 
     @Test
-    public void SignInWebElementRestoreUsersPaswordTestCase5() {
+    public void SignInWebElementRestoreUsersPasswordTestCase5() {
         signInPage.clickLinkSignInWebElement();
         signInPage.completeSignInRegistrationForm();
         signInPage.clickLinkForgotPassword();
         signInPage.RestoreUserPassword();
     }
+
+    @Test(dataProvider = "NewRequirementsForPassword", dataProviderClass = DataProviders.class)
+
+        public void password(String password, boolean requirement) {
+
+        signInPage.clickLinkSignInWebElement();
+        mainPage.fillingPasswordForSignInFormUsingDataProvider(password);
+          if (!requirement){
+            Assert.assertTrue(driver.findElement(Locators.ALERT_WRONG_PASSWORD).isDisplayed());
+        }
+    }
 }
+
 

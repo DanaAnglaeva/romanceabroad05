@@ -7,7 +7,7 @@
                     <parameter name="testEnv" value="qa"/>
                     <parameter name="testBox" value="web"/>
                     <parameter name="version" value="59.0"/>
-                    <parameter name="browser" value="remoteFirefox"/>
+                    <parameter name="browser" value="remoteChrome"/>
                     <parameter name="platform" value="Windows 10"/>
                     <classes>
                         <class name ="com.romanceabroad.ui.RegistrationTests2"/>
@@ -18,7 +18,6 @@
 
     <!--    <test name="ChromeTestCases2">-->
     <!--    <parameter name="browser" value="chrome"/>-->
-
     <!--    <groups>-->
     <!--      <run>-->
     <!--        <exclude name="ie"/>-->
