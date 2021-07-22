@@ -11,14 +11,7 @@ import org.testng.annotations.Test;
 
 public class RegistrationTests2 extends BaseUI {
 
-     @Test(dataProvider = "Registration2", dataProviderClass = DataProviders.class)
-    public void testRegistration9(String email, String nickname) {
-        System.out.println(email);
 
-        mainPage.clickJoinButton();
-        mainPage.completeFirstPartOfRegistration(email, Data.password);
-
-    }
     @Video(name = "Registration test" )
     @Test()
     public void testRegistrationTestCase1() {

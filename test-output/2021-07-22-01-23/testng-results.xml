@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Mobile Test Suite" duration-ms="43171" started-at="2021-07-21T21:23:13 EDT" finished-at="2021-07-21T21:23:56 EDT">
+    <groups>
+    </groups>
+    <test name="Chrome test cases" duration-ms="43171" started-at="2021-07-21T21:23:13 EDT" finished-at="2021-07-21T21:23:56 EDT">
+      <class name="com.romanceabroad.ui.RegistrationTests2">
+        <test-method status="PASS" signature="setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="setup" is-config="true" duration-ms="11731" started-at="2021-07-21T21:23:13 EDT" finished-at="2021-07-21T21:23:25 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[web]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[59.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[qa]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[public void com.romanceabroad.ui.RegistrationTests2.selectRandomDropDownListMaxAgeTestCase12()]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[org.testng.TestRunner@22680f52]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="selectRandomDropDownListMaxAgeTestCase12()[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="selectRandomDropDownListMaxAgeTestCase12" duration-ms="12866" started-at="2021-07-21T21:23:25 EDT" finished-at="2021-07-21T21:23:38 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectRandomDropDownListMaxAgeTestCase12 -->
+        <test-method status="PASS" signature="afterActions(org.testng.ITestResult)[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="afterActions" is-config="true" duration-ms="325" started-at="2021-07-21T21:23:38 EDT" finished-at="2021-07-21T21:23:38 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=selectRandomDropDownListMaxAgeTestCase12 status=SUCCESS method=RegistrationTests2.selectRandomDropDownListMaxAgeTestCase12()[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterActions -->
+        <test-method status="PASS" signature="setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="setup" is-config="true" duration-ms="10407" started-at="2021-07-21T21:23:38 EDT" finished-at="2021-07-21T21:23:48 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[web]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[59.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[qa]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[public void com.romanceabroad.ui.RegistrationTests2.testRegistrationTestCase1()]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[org.testng.TestRunner@22680f52]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testRegistrationTestCase1()[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="testRegistrationTestCase1" duration-ms="7681" started-at="2021-07-21T21:23:48 EDT" finished-at="2021-07-21T21:23:56 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegistrationTestCase1 -->
+        <test-method status="PASS" signature="afterActions(org.testng.ITestResult)[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6]" name="afterActions" is-config="true" duration-ms="80" started-at="2021-07-21T21:23:56 EDT" finished-at="2021-07-21T21:23:56 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testRegistrationTestCase1 status=SUCCESS method=RegistrationTests2.testRegistrationTestCase1()[pri:0, instance:com.romanceabroad.ui.RegistrationTests2@6ebc05a6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterActions -->
+      </class> <!-- com.romanceabroad.ui.RegistrationTests2 -->
+    </test> <!-- Chrome test cases -->
+  </suite> <!-- Mobile Test Suite -->
+</testng-results>

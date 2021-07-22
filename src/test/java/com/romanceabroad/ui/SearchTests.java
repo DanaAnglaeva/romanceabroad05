@@ -104,6 +104,7 @@ public class SearchTests extends BaseUI {
 
     @Test
     public void clickWebElementIsDisplayedTestCase7() {
+
         WebElement tabSearch = driver.findElement((Locators.LINK_SEARCH));
         if (tabSearch.isDisplayed()) {
             tabSearch.click();

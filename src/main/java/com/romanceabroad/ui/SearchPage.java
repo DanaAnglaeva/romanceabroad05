@@ -13,8 +13,9 @@ public class SearchPage extends BaseActions {
     }
 
     public void clickLinkSearch() {
-  //      wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_SEARCH));
-        driver.findElement(Locators.LINK_SEARCH).click();
+     //   wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_SEARCH));
+        javaWait(3);
+          driver.findElement(Locators.LINK_SEARCH).click();
     }
 
     public void getDropDownListByDefault() {

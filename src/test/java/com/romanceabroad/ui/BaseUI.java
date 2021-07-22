@@ -42,7 +42,6 @@ public class BaseUI {
     PhotosPage photosPage;
     SoftAssert softAssert = new SoftAssert();
 
-
     protected TestBox testBox;
     protected TestBrowser testBrowser;
     protected String valueOfBox;
